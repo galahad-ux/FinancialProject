@@ -42,7 +42,13 @@ public class LoginViewController {
         Parent root = fxmlLoader.load();
 
         PortfolioViewController controller = fxmlLoader.getController();
+        User user = User.checkEmail(userEmail);
+        if(user != null){
+            controller.setCurrentUserName(user);
+        }
+
         Scene scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("buttonDesign.css").toExternalForm());
         Stage stage = (Stage) passwordField.getScene().getWindow();
         stage.setTitle("Your Account");
         stage.setScene(scene);

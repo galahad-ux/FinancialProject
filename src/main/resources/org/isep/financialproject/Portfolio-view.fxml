@@ -1,14 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.isep.financialproject.PortfolioViewController"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="447.0" prefWidth="643.0" style="-fx-background-color: lavender;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.isep.financialproject.PortfolioViewController">
+   <left>
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="103.0" text="Dashboard" />
+            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="103.0" text="Transfer" />
+            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="103.0" text="Transactions" />
+            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="103.0" text="Bank" />
+            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="104.0" text="Investments" />
+            <Region prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="103.0" text="User Settings" />
+            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="103.0" text="Log out">
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets top="5.0" />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+   <top>
+      <HBox prefHeight="70.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="100.0" prefWidth="175.0" spacing="20.0">
+               <children>
+                  <Label text="Miaou Portfolio">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="welcomeMsg" text="Label">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" top="20.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </VBox>
+            <Region prefHeight="89.0" prefWidth="224.0" HBox.hgrow="ALWAYS" />
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Button mnemonicParsing="false" text="🔔">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="date" alignment="CENTER_RIGHT" text="Label" />
+               </children>
+               <padding>
+                  <Insets left="40.0" top="20.0" />
+               </padding>
+            </HBox>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>
