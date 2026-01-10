@@ -7,16 +7,14 @@ import java.util.List;
 public class User {
     public String userFullName;
     public String userEmail;
-    public String username;
     public String userPassword;
     public Currency preferredCurrency;
     public static List<User> allUsers = null;
     private final List<Portfolio> portfolios;
 
-    public User(String userFullName, String userEmail,String username, String userPassword, Currency preferredCurrency){
+    public User(String userFullName, String userEmail, String userPassword, Currency preferredCurrency){
         this.userFullName = userFullName;
         this.userEmail = userEmail;
-        this.username = username;
         this.userPassword = userPassword;
         this.preferredCurrency = preferredCurrency;
         this.portfolios = new ArrayList<>();
@@ -29,10 +27,6 @@ public class User {
 
     public String getUserEmail() {
         return userEmail;
-    }
-
-    public String getUsername() {
-        return username;
     }
 
     public String getUserPassword() {
@@ -65,30 +59,31 @@ public class User {
     }
 
     //Authentication management methods
-    public static User checkUsername(String username){
+    public static User checkEmail(String userEmail){
         for (User user : allUsers){
-            if(user.getUsername().equalsIgnoreCase(username)){
+            if(user.getUserEmail().equalsIgnoreCase(userEmail)){
                 return user;
             }
         }
         return null;
     }
-    public static boolean emailExists(String username){
-        return checkUsername(username) != null;
+    public static boolean emailExists(String userEmail){
+        return checkEmail(userEmail) != null;
     }
-    public static boolean register (String userFullName, String userEmail, String username, String userPassword, Currency preferredCurrency){
+
+    public static boolean register (String userFullName, String userEmail, String userPassword, Currency preferredCurrency){
         if (emailExists(userEmail)){
             System.out.println("User email already exists");
             return false;
         }
-        User newUser = new User(userFullName,userEmail,username,userPassword, preferredCurrency);
+        User newUser = new User(userFullName,userEmail,userPassword, preferredCurrency);
         allUsers.add(newUser);
         User.saveAllUsers(allUsers, "users.csv");
         return true;
     }
 
-    public static boolean authenticate(String username, String userPassword){
-        User user = checkUsername(username);
+    public static boolean authenticate(String userEmail, String userPassword){
+        User user = checkEmail(userEmail);
         if (user != null && user.getUserPassword().equals(userPassword)){
             return true;
         }
@@ -98,7 +93,7 @@ public class User {
 
     //CSV methods
     public String toCSV(){
-        return userFullName + "," + userEmail + "," + username + "," + userPassword + "," + preferredCurrency;
+        return userFullName + "," + userEmail + "," + userPassword + "," + preferredCurrency;
     }
 
     public static User fromCSV(String csvLine){
@@ -106,13 +101,13 @@ public class User {
 
         //preferred currency
         Currency currency;
-        if (objects.length > 4){
+        if (objects.length > 3){
             currency = Currency.valueOf(objects[4]);
         }else{
             currency = Currency.EUR;
         }
 
-        return new User(objects[0], objects[1], objects[2], objects[3], currency);
+        return new User(objects[0], objects[1], objects[2], currency);
     }
 
     //saving new user to csv file

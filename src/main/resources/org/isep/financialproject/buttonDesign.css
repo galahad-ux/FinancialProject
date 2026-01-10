@@ -7,8 +7,6 @@
   effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 9, 0, 0, 9);
 }
 
-.button:hover {-fx-background-color: #26D996;}
-
 .button:pressed {
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 5, 0, 0, 5);
     -fx-translate-y: 4px;

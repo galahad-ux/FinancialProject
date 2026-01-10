@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="512.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.isep.financialproject.SignUpViewController">
+<AnchorPane prefHeight="512.0" prefWidth="600.0" style="-fx-background-color: lavender;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.isep.financialproject.SignUpViewController">
    <children>
       <Label layoutX="46.0" layoutY="37.0" text="Miaou Portfolio">
          <font>
@@ -26,17 +26,17 @@
       <Label layoutX="51.0" layoutY="237.0" text="Choice of Currency: " />
       <Label layoutX="52.0" layoutY="284.0" text="Password: " />
       <Label layoutX="54.0" layoutY="336.0" text="Confirm Password: " />
-      <TextField fx:id="fullName" layoutX="174.0" layoutY="124.0" prefHeight="27.0" prefWidth="329.0" />
-      <TextField fx:id="userEmail" layoutX="174.0" layoutY="182.0" prefHeight="27.0" prefWidth="330.0" />
+      <TextField fx:id="fullName" layoutX="174.0" layoutY="124.0" prefHeight="27.0" prefWidth="329.0" style="-fx-border-color: black;-fx-background-color: lavender;" />
+      <TextField fx:id="email" layoutX="174.0" layoutY="182.0" prefHeight="27.0" prefWidth="330.0" style="-fx-border-color: black;-fx-background-color: lavender;" />
       <MenuButton layoutX="174.0" layoutY="233.0" mnemonicParsing="false" text="Currency">
         <items>
           <MenuItem mnemonicParsing="false" text="Action 1" />
           <MenuItem mnemonicParsing="false" text="Action 2" />
         </items>
       </MenuButton>
-      <TextField fx:id="password" layoutX="174.0" layoutY="280.0" prefHeight="27.0" prefWidth="329.0" />
-      <TextField fx:id="retypedPw" layoutX="174.0" layoutY="332.0" prefHeight="27.0" prefWidth="329.0" />
-      <Button layoutX="242.0" layoutY="394.0" mnemonicParsing="false" text="&gt; Sign Up" />
+      <TextField fx:id="password" layoutX="174.0" layoutY="280.0" prefHeight="27.0" prefWidth="329.0" style="-fx-border-color: black;-fx-background-color: lavender;" />
+      <TextField fx:id="retypedPw" layoutX="174.0" layoutY="332.0" prefHeight="27.0" prefWidth="329.0" style="-fx-border-color: black;-fx-background-color: lavender;" />
+      <Button layoutX="242.0" layoutY="394.0" mnemonicParsing="false" onAction="#signUp" text="&gt; Sign Up" />
       <Label layoutX="360.0" layoutY="460.0" text="Already have an account?" />
       <Button layoutX="514.0" layoutY="456.0" mnemonicParsing="false" text="Login" />
       <Button layoutX="367.0" layoutY="394.0" mnemonicParsing="false" onAction="#clearInfo" text="&gt; Clear all" />
