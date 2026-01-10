@@ -22,7 +22,7 @@
          </font></Label>
       <TextField fx:id="emailField" layoutX="150.0" layoutY="134.0" prefHeight="27.0" prefWidth="305.0" style="-fx-border-color: black;-fx-background-color: lavender;" />
       <TextField fx:id="passwordField" layoutX="150.0" layoutY="211.0" prefHeight="27.0" prefWidth="306.0" style="-fx-border-color: black;-fx-background-color: lavender;" />
-      <Button layoutX="194.0" layoutY="284.0" mnemonicParsing="false" text="&lt; Login" />
+      <Button layoutX="194.0" layoutY="284.0" mnemonicParsing="false" onAction="#login" text="&lt; Login" />
       <Button layoutX="328.0" layoutY="284.0" mnemonicParsing="false" onAction="#clearInfo" text="&lt; Clear" />
       <Button layoutX="464.0" layoutY="327.0" mnemonicParsing="false" onAction="#switchToSignUp" text="&lt; Sign Up" />
       <Label layoutX="278.0" layoutY="68.0" text="Log In">
