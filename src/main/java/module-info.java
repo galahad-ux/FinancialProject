@@ -6,6 +6,7 @@ module org.isep.financialproject {
     requires com.dlsc.formsfx;
     requires org.kordamp.bootstrapfx.core;
     requires com.fasterxml.jackson.databind;
+    requires javafx.graphics;
 
     opens org.isep.financialproject to javafx.fxml;
     exports org.isep.financialproject;

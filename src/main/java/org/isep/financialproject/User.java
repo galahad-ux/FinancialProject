@@ -103,7 +103,16 @@ public class User {
 
     public static User fromCSV(String csvLine){
         String[] objects = csvLine.split(",");
-        return new User(objects[0], objects[1], objects[2], objects[3],);
+
+        //preferred currency
+        Currency currency;
+        if (objects.length > 4){
+            currency = Currency.valueOf(objects[4]);
+        }else{
+            currency = Currency.EUR;
+        }
+
+        return new User(objects[0], objects[1], objects[2], objects[3], currency);
     }
 
     //saving new user to csv file

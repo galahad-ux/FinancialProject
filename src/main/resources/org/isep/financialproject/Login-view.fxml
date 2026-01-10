@@ -6,15 +6,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.isep.financialproject.LoginViewController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: lavender;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.isep.financialproject.LoginViewController">
    <children>
       <Label layoutX="63.0" layoutY="54.0" text="Miaou Portfolio" />
       <Label layoutX="63.0" layoutY="124.0" text="Username:" />
       <Label layoutX="63.0" layoutY="191.0" text="Password: " />
-      <TextField layoutX="151.0" layoutY="120.0" prefHeight="27.0" prefWidth="305.0" />
-      <TextField layoutX="151.0" layoutY="187.0" prefHeight="27.0" prefWidth="306.0" />
+      <TextField fx:id="usernameField" layoutX="151.0" layoutY="120.0" prefHeight="27.0" prefWidth="305.0" style="-fx-border-color: black;-fx-background-color: lavender;"/>
+      <TextField fx:id="passwordField" layoutX="151.0" layoutY="187.0" prefHeight="27.0" prefWidth="306.0" style="-fx-border-color: black;-fx-background-color: lavender;"/>
       <Button layoutX="194.0" layoutY="270.0" mnemonicParsing="false" text="&lt; Login" />
-      <Button layoutX="327.0" layoutY="270.0" mnemonicParsing="false" text="&lt; Clear" />
+      <Button layoutX="327.0" layoutY="270.0" mnemonicParsing="false" onAction="#clearInfo" text="&lt; Clear" />
       <Button layoutX="457.0" layoutY="335.0" mnemonicParsing="false" text="&lt; Sign Up" />
    </children>
 </AnchorPane>
