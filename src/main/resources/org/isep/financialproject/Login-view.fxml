@@ -4,17 +4,31 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: lavender;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.isep.financialproject.LoginViewController">
    <children>
-      <Label layoutX="63.0" layoutY="54.0" text="Miaou Portfolio" />
-      <Label layoutX="63.0" layoutY="124.0" text="Username:" />
-      <Label layoutX="63.0" layoutY="191.0" text="Password: " />
-      <TextField fx:id="usernameField" layoutX="151.0" layoutY="120.0" prefHeight="27.0" prefWidth="305.0" style="-fx-border-color: black;-fx-background-color: lavender;"/>
-      <TextField fx:id="passwordField" layoutX="151.0" layoutY="187.0" prefHeight="27.0" prefWidth="306.0" style="-fx-border-color: black;-fx-background-color: lavender;"/>
-      <Button layoutX="194.0" layoutY="270.0" mnemonicParsing="false" text="&lt; Login" />
-      <Button layoutX="327.0" layoutY="270.0" mnemonicParsing="false" onAction="#clearInfo" text="&lt; Clear" />
-      <Button layoutX="457.0" layoutY="335.0" mnemonicParsing="false" text="&lt; Sign Up" />
+      <Label layoutX="44.0" layoutY="36.0" text="Miaou Portfolio">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label layoutX="63.0" layoutY="140.0" text="Username:">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label layoutX="63.0" layoutY="217.0" text="Password: ">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <TextField fx:id="usernameField" layoutX="150.0" layoutY="134.0" prefHeight="27.0" prefWidth="305.0" style="-fx-border-color: black;-fx-background-color: lavender;" />
+      <TextField fx:id="passwordField" layoutX="150.0" layoutY="211.0" prefHeight="27.0" prefWidth="306.0" style="-fx-border-color: black;-fx-background-color: lavender;" />
+      <Button layoutX="194.0" layoutY="284.0" mnemonicParsing="false" text="&lt; Login" />
+      <Button layoutX="327.0" layoutY="284.0" mnemonicParsing="false" onAction="#clearInfo" text="&lt; Clear" />
+      <Button layoutX="464.0" layoutY="327.0" mnemonicParsing="false" text="&lt; Sign Up" />
+      <Label layoutX="278.0" layoutY="68.0" text="Log In">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
