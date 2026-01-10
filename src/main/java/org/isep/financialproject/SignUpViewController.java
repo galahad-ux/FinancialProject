@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -51,6 +52,21 @@ public class SignUpViewController {
         Stage stage = (Stage) fullName.getScene().getWindow();
         stage.setTitle("Error");
         stage.setScene(scene);
+    }
+
+    //Currency initializing
+    @FXML
+    public void initialize(){
+        preferredCurrency.getItems().clear();
+        for (Currency c: Currency.values()){
+            MenuItem option = new MenuItem(c.name());
+
+            option.setOnAction(actionEvent -> {
+                preferredCurrency.setText(c.name());
+            });
+
+            preferredCurrency.getItems().add(option);
+        }
     }
 
     //Sign up authentication

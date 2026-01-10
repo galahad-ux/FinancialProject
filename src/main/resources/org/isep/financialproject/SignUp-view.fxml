@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="512.0" prefWidth="600.0" style="-fx-background-color: lavender;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.isep.financialproject.SignUpViewController">
    <children>
       <Label layoutX="46.0" layoutY="37.0" text="Miaou Portfolio">
@@ -28,7 +27,7 @@
       <Label layoutX="54.0" layoutY="336.0" text="Confirm Password: " />
       <TextField fx:id="fullName" layoutX="174.0" layoutY="124.0" prefHeight="27.0" prefWidth="329.0" style="-fx-border-color: black;-fx-background-color: lavender;" />
       <TextField fx:id="email" layoutX="174.0" layoutY="182.0" prefHeight="27.0" prefWidth="330.0" style="-fx-border-color: black;-fx-background-color: lavender;" />
-      <MenuButton layoutX="174.0" layoutY="233.0" mnemonicParsing="false" text="Currency">
+      <MenuButton fx:id="preferredCurrency" layoutX="174.0" layoutY="233.0" mnemonicParsing="false" text="Currency">
         <items>
           <MenuItem mnemonicParsing="false" text="Action 1" />
           <MenuItem mnemonicParsing="false" text="Action 2" />
