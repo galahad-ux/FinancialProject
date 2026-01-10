@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
@@ -24,6 +25,7 @@ public class SignUpViewController {
 
     @FXML
     private MenuButton preferredCurrency;
+    private Currency selectedCurrency;
 
     @FXML
     private TextField password;
@@ -47,11 +49,12 @@ public class SignUpViewController {
 
         SignupErrorController controller = fxmlLoader.getController();
         controller.fill(message);
-        Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("buttonDesign.css").toExternalForm());
-        Stage stage = (Stage) fullName.getScene().getWindow();
+
+        Stage stage = new Stage();
         stage.setTitle("Error");
-        stage.setScene(scene);
+        stage.setScene(new Scene(root));
+
+        stage.show();
     }
 
     //Currency initializing
@@ -63,6 +66,7 @@ public class SignUpViewController {
 
             option.setOnAction(actionEvent -> {
                 preferredCurrency.setText(c.name());
+                this.selectedCurrency = c;
             });
 
             preferredCurrency.getItems().add(option);
@@ -104,12 +108,35 @@ public class SignUpViewController {
             return;
         }
 
-//        if (User.register(userFullName,userEmail,userName,userPassword, preferredCurrency)){
-//            try {
-//                popUp();
-//            } catch (IOException e) {
-//                throw new RuntimeException(e);
-//            }
-//        }
+        if (User.register(userFullName,userEmail,userPassword, selectedCurrency)){
+            //success alert
+            Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+            successAlert.setTitle("Successful");
+            successAlert.setHeaderText("Account created successfully");
+            successAlert.setContentText("You may proceed to Login");
+            successAlert.show();
+
+            try {
+                BackToLogin();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+    //switching back to log in button
+    @FXML
+    public void BackToLogin() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Login-view.fxml"));
+        Parent root = fxmlLoader.load();
+
+        LoginViewController controller = fxmlLoader.getController();
+
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("buttonDesign.css").toExternalForm());
+        Stage stage = (Stage) fullName.getScene().getWindow();
+        stage.setTitle("Login");
+        stage.setScene(scene);
+
     }
 }

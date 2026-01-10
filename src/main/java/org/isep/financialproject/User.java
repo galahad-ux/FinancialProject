@@ -102,7 +102,7 @@ public class User {
         //preferred currency
         Currency currency;
         if (objects.length > 3){
-            currency = Currency.valueOf(objects[4]);
+            currency = Currency.valueOf(objects[3]);
         }else{
             currency = Currency.EUR;
         }

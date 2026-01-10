@@ -37,7 +37,7 @@
       <TextField fx:id="retypedPw" layoutX="174.0" layoutY="332.0" prefHeight="27.0" prefWidth="329.0" style="-fx-border-color: black;-fx-background-color: lavender;" />
       <Button layoutX="242.0" layoutY="394.0" mnemonicParsing="false" onAction="#signUp" text="&gt; Sign Up" />
       <Label layoutX="360.0" layoutY="460.0" text="Already have an account?" />
-      <Button layoutX="514.0" layoutY="456.0" mnemonicParsing="false" text="Login" />
+      <Button layoutX="514.0" layoutY="456.0" mnemonicParsing="false" onAction="#BackToLogin" text="Login" />
       <Button layoutX="367.0" layoutY="394.0" mnemonicParsing="false" onAction="#clearInfo" text="&gt; Clear all" />
    </children>
 </AnchorPane>
