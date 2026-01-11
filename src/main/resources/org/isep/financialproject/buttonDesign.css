@@ -11,3 +11,21 @@
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 5, 0, 0, 5);
     -fx-translate-y: 4px;
 }
+
+.contentButton{
+  -fx-cursor: pointer;
+  -fx-text-align: center;
+  -fx-text-decoration: none;
+  -fx-background-color: gray;
+  -fx-border-color: none;
+  effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 9, 0, 0, 9);
+}
+
+.contentButton:hover {
+    -fx-background-color: blue;
+}
+
+.contentButton:pressed {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 5, 0, 0, 5);
+    -fx-translate-y: 4px;
+}

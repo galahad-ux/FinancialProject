@@ -1,8 +1,14 @@
 package org.isep.financialproject;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.time.LocalDate;
 
 public class PortfolioViewController {
@@ -15,6 +21,9 @@ public class PortfolioViewController {
     @FXML
     private User currentUserName;
 
+    @FXML
+    private AnchorPane contentPane;
+
     public void setCurrentUserName(User userFullName) {
         this.currentUserName = userFullName;
         welcomeMsg.setText("Welcome " + userFullName.getUserFullName());
@@ -23,5 +32,40 @@ public class PortfolioViewController {
     @FXML
     public void initialize() {
         date.setText(LocalDate.now().toString());
+    }
+
+    //logout button
+    @FXML
+    public void BackToLogin() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Login-view.fxml"));
+        Parent root = fxmlLoader.load();
+
+        LoginViewController controller = fxmlLoader.getController();
+
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("buttonDesign.css").toExternalForm());
+        Stage stage = (Stage) welcomeMsg.getScene().getWindow();
+        stage.setTitle("Login");
+        stage.setScene(scene);
+
+    }
+
+    @FXML
+    public void showSettings(){
+        loadView("Settings-view.fxml");
+    }
+
+    //switching view in main window
+    private void loadView(String fxmlFile){
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlFile));
+            Parent root = fxmlLoader.load();
+
+            contentPane.getChildren().clear();
+            contentPane.getChildren().add(root);
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }

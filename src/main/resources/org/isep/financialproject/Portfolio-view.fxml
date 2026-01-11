@@ -12,16 +12,16 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="447.0" prefWidth="643.0" style="-fx-background-color: lavender;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.isep.financialproject.PortfolioViewController">
    <left>
-      <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="353.0" prefWidth="110.0" style="-fx-background-color: gray;" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="103.0" text="Dashboard" />
-            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="103.0" text="Transfer" />
-            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="103.0" text="Transactions" />
-            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="103.0" text="Bank" />
-            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="104.0" text="Investments" />
-            <Region prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
-            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="103.0" text="User Settings" />
-            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="103.0" text="Log out">
+            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="98.0" styleClass="contentButton" stylesheets="@buttonDesign.css" text="Dashboard" textFill="WHITE" />
+            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="103.0" styleClass="contentButton" stylesheets="@buttonDesign.css" text="Transfer" textFill="WHITE" />
+            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="103.0" styleClass="contentButton" stylesheets="@buttonDesign.css" text="Transactions" textFill="WHITE" />
+            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="103.0" styleClass="contentButton" stylesheets="@buttonDesign.css" text="Bank" textFill="WHITE" />
+            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="104.0" styleClass="contentButton" stylesheets="@buttonDesign.css" text="Investments" textFill="WHITE" />
+            <Region prefHeight="143.0" prefWidth="82.0" VBox.vgrow="ALWAYS" />
+            <Button mnemonicParsing="false" onAction="#showSettings" prefHeight="27.0" prefWidth="103.0" styleClass="contentButton" stylesheets="@buttonDesign.css" text="User Settings" textFill="WHITE" />
+            <Button mnemonicParsing="false" onAction="#BackToLogin" prefHeight="27.0" prefWidth="103.0" styleClass="contentButton" stylesheets="@buttonDesign.css" text="Log out" textFill="WHITE">
                <VBox.margin>
                   <Insets bottom="20.0" />
                </VBox.margin>
@@ -30,10 +30,16 @@
          <BorderPane.margin>
             <Insets top="5.0" />
          </BorderPane.margin>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
       </VBox>
    </left>
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <AnchorPane fx:id="contentPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets top="5.0" />
+         </BorderPane.margin></AnchorPane>
    </center>
    <top>
       <HBox prefHeight="70.0" prefWidth="600.0" BorderPane.alignment="CENTER">
@@ -61,12 +67,15 @@
             <Region prefHeight="89.0" prefWidth="224.0" HBox.hgrow="ALWAYS" />
             <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
-                  <Button mnemonicParsing="false" text="🔔">
+                  <Button mnemonicParsing="false" stylesheets="@buttonDesign.css" text="🔔">
                      <font>
-                        <Font size="14.0" />
+                        <Font size="13.0" />
                      </font>
                   </Button>
-                  <Label fx:id="date" alignment="CENTER_RIGHT" text="Label" />
+                  <Label fx:id="date" alignment="CENTER_RIGHT" text="Label">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Label>
                </children>
                <padding>
                   <Insets left="40.0" top="20.0" />

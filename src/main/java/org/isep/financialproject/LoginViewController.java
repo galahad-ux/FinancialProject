@@ -48,7 +48,6 @@ public class LoginViewController {
         }
 
         Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("buttonDesign.css").toExternalForm());
         Stage stage = (Stage) passwordField.getScene().getWindow();
         stage.setTitle("Your Account");
         stage.setScene(scene);
