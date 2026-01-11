@@ -55,6 +55,11 @@ public class PortfolioViewController {
         loadView("Settings-view.fxml");
     }
 
+    @FXML
+    public void showTransfer(){
+        loadView("Transfer-view.fxml");
+    }
+
     //switching view in main window
     private void loadView(String fxmlFile){
         try{
