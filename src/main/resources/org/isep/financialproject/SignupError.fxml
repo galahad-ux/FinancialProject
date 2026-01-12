@@ -8,12 +8,12 @@
    <children>
       <Label fx:id="signUpError" layoutX="149.0" layoutY="28.0" text="Error!">
          <font>
-            <Font size="14.0" />
+            <Font name="Georgia Bold" size="14.0" />
          </font>
       </Label>
       <Label fx:id="fillIn" layoutX="81.0" layoutY="57.0" text="Label">
          <font>
-            <Font size="14.0" />
+            <Font name="Georgia Bold" size="14.0" />
          </font>
       </Label>
    </children>

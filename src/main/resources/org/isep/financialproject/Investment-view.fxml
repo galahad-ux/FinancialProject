@@ -17,7 +17,7 @@
    <children>
       <Label layoutX="226.0" layoutY="14.0" text="Investments">
          <font>
-            <Font name="System Bold" size="14.0" />
+            <Font name="Georgia Bold" size="14.0" />
          </font>
       </Label>
       <Label layoutX="39.0" layoutY="41.0" text="Total Asset:" />

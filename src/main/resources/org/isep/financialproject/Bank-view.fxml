@@ -5,36 +5,62 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="392.0" prefWidth="532.8" style="-fx-background-color: #cfcfe1;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.isep.financialproject.BankViewController">
    <children>
       <Label layoutX="217.0" layoutY="20.0" text="Bank Accounts">
          <font>
-            <Font name="System Bold" size="14.0" />
+            <Font name="Georgia Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="51.0" layoutY="62.0" text="Total Balance: " />
-      <Label layoutX="151.0" layoutY="62.0" prefHeight="19.0" prefWidth="213.0" text="Label" />
+      <Label layoutX="51.0" layoutY="62.0" text="Total Balance: ">
+         <font>
+            <Font name="Georgia" size="12.800000190734863" />
+         </font></Label>
+      <Label layoutX="151.0" layoutY="62.0" prefHeight="19.0" prefWidth="213.0" text="Label">
+         <font>
+            <Font name="Georgia" size="12.800000190734863" />
+         </font></Label>
       <SplitPane dividerPositions="0.5423003802281369" layoutX="51.0" layoutY="110.0" prefHeight="232.0" prefWidth="422.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #cfcfe1;">
                <children>
                   <Label layoutX="20.0" layoutY="14.0" text="Accounts">
                      <font>
-                        <Font name="System Bold" size="12.800000190734863" />
+                        <Font name="Georgia Bold" size="12.800000190734863" />
                      </font>
                   </Label>
-                  <Label layoutX="20.0" layoutY="60.0" text="Checking Account: " />
-                  <Label layoutX="24.0" layoutY="124.0" text="Savings Account:" />
-                  <Label layoutX="30.0" layoutY="89.0" text="Label" />
-                  <Label layoutX="129.0" layoutY="89.0" text="Label" />
-                  <Label layoutX="30.0" layoutY="155.0" text="Label" />
-                  <Label layoutX="129.0" layoutY="155.0" text="Label" />
+                  <Label layoutX="20.0" layoutY="60.0" text="Checking Account: ">
+                     <font>
+                        <Font name="Georgia" size="12.800000190734863" />
+                     </font></Label>
+                  <Label layoutX="24.0" layoutY="124.0" text="Savings Account:">
+                     <font>
+                        <Font name="Georgia" size="12.800000190734863" />
+                     </font></Label>
+                  <Label layoutX="30.0" layoutY="89.0" text="Label">
+                     <font>
+                        <Font name="Georgia" size="12.800000190734863" />
+                     </font></Label>
+                  <Label layoutX="129.0" layoutY="89.0" text="Label">
+                     <font>
+                        <Font name="Georgia" size="12.800000190734863" />
+                     </font></Label>
+                  <Label layoutX="30.0" layoutY="155.0" text="Label">
+                     <font>
+                        <Font name="Georgia" size="12.800000190734863" />
+                     </font></Label>
+                  <Label layoutX="129.0" layoutY="155.0" text="Label">
+                     <font>
+                        <Font name="Georgia" size="12.800000190734863" />
+                     </font></Label>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #cfcfe1;">
                <children>
-                  <Label layoutX="73.0" layoutY="14.0" text="Analytics" />
+                  <Label layoutX="73.0" layoutY="14.0" text="Analytics">
+                     <font>
+                        <Font name="Georgia" size="12.800000190734863" />
+                     </font></Label>
                </children>
             </AnchorPane>
         </items>

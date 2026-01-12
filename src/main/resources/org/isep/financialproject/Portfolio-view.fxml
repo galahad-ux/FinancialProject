@@ -13,24 +13,45 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <StackPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.isep.financialproject.PortfolioViewController">
    <children>
       <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="447.0" prefWidth="643.0" style="-fx-background-color: lavender;">
          <left>
             <VBox prefHeight="353.0" prefWidth="110.0" style="-fx-background-color: gray;" BorderPane.alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" onAction="#showDashboard" prefHeight="27.0" prefWidth="98.0" styleClass="contentButton" stylesheets="@buttonDesign.css" text="Dashboard" textFill="WHITE" />
-                  <Button mnemonicParsing="false" onAction="#showTransfer" prefHeight="27.0" prefWidth="103.0" styleClass="contentButton" stylesheets="@buttonDesign.css" text="Transfer" textFill="WHITE" />
-                  <Button mnemonicParsing="false" onAction="#showTransactions" prefHeight="27.0" prefWidth="103.0" styleClass="contentButton" stylesheets="@buttonDesign.css" text="Transactions" textFill="WHITE" />
-                  <Button mnemonicParsing="false" onAction="#showAccount" prefHeight="27.0" prefWidth="103.0" styleClass="contentButton" stylesheets="@buttonDesign.css" text="Bank" textFill="WHITE" />
-                  <Button mnemonicParsing="false" onAction="#showInvestments" prefHeight="27.0" prefWidth="104.0" styleClass="contentButton" stylesheets="@buttonDesign.css" text="Investments" textFill="WHITE" />
+                  <Button mnemonicParsing="false" onAction="#showDashboard" prefHeight="27.0" prefWidth="98.0" styleClass="contentButton" stylesheets="@buttonDesign.css" text="Dashboard" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia" size="12.800000190734863" />
+                     </font></Button>
+                  <Button mnemonicParsing="false" onAction="#showTransfer" prefHeight="27.0" prefWidth="103.0" styleClass="contentButton" stylesheets="@buttonDesign.css" text="Transfer" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia" size="12.800000190734863" />
+                     </font></Button>
+                  <Button mnemonicParsing="false" onAction="#showTransactions" prefHeight="27.0" prefWidth="103.0" styleClass="contentButton" stylesheets="@buttonDesign.css" text="Transactions" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia" size="12.800000190734863" />
+                     </font></Button>
+                  <Button mnemonicParsing="false" onAction="#showAccount" prefHeight="27.0" prefWidth="103.0" styleClass="contentButton" stylesheets="@buttonDesign.css" text="Bank" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia" size="12.800000190734863" />
+                     </font></Button>
+                  <Button mnemonicParsing="false" onAction="#showInvestments" prefHeight="27.0" prefWidth="104.0" styleClass="contentButton" stylesheets="@buttonDesign.css" text="Investments" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia" size="12.800000190734863" />
+                     </font></Button>
                   <Region prefHeight="143.0" prefWidth="82.0" VBox.vgrow="ALWAYS" />
-                  <Button mnemonicParsing="false" onAction="#showSettings" prefHeight="27.0" prefWidth="103.0" styleClass="contentButton" stylesheets="@buttonDesign.css" text="User Settings" textFill="WHITE" />
+                  <Button mnemonicParsing="false" onAction="#showSettings" prefHeight="27.0" prefWidth="103.0" styleClass="contentButton" stylesheets="@buttonDesign.css" text="User Settings" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia" size="12.800000190734863" />
+                     </font>
+                  </Button>
                   <Button mnemonicParsing="false" onAction="#BackToLogin" prefHeight="27.0" prefWidth="103.0" styleClass="contentButton" stylesheets="@buttonDesign.css" text="Log out" textFill="WHITE">
                      <VBox.margin>
                         <Insets bottom="20.0" />
                      </VBox.margin>
+                     <font>
+                        <Font name="Georgia" size="12.800000190734863" />
+                     </font>
                   </Button>
                </children>
                <BorderPane.margin>
@@ -51,24 +72,27 @@
          <top>
             <HBox prefHeight="50.0" prefWidth="643.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label text="Miaou Portfolio">
+                  <Label prefHeight="31.0" prefWidth="208.0" text="MIAOU PORTFOLIO ₍^. .^₎⟆">
                      <font>
-                        <Font size="14.0" />
+                        <Font name="Georgia" size="14.0" />
                      </font>
                      <padding>
                         <Insets top="15.0" />
                      </padding>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
                   </Label>
-                  <Region prefHeight="50.0" prefWidth="86.0" HBox.hgrow="NEVER" />
-                  <Label fx:id="welcomeMsg" prefHeight="46.0" prefWidth="224.0" text="Label">
+                  <Region prefHeight="50.0" prefWidth="31.0" HBox.hgrow="NEVER" />
+                  <Label fx:id="welcomeMsg" prefHeight="46.0" prefWidth="178.0" text="Label">
                      <padding>
                         <Insets top="18.0" />
                      </padding>
                      <font>
-                        <Font size="18.0" />
+                        <Font name="Georgia" size="18.0" />
                      </font>
                   </Label>
-                  <Region prefHeight="50.0" prefWidth="64.0" HBox.hgrow="NEVER" />
+                  <Region prefHeight="50.0" prefWidth="30.0" HBox.hgrow="NEVER" />
                   <Button mnemonicParsing="false" onAction="#showNotifications" stylesheets="@buttonDesign.css" text="🔔">
                      <HBox.margin>
                         <Insets top="15.0" />
@@ -78,11 +102,17 @@
                      <HBox.margin>
                         <Insets left="5.0" top="15.0" />
                      </HBox.margin>
+                     <font>
+                        <Font name="Georgia" size="12.800000190734863" />
+                     </font>
                   </Label>
                   <Label fx:id="date" text="Label">
                      <padding>
-                        <Insets left="10.0" top="15.0" />
+                        <Insets left="10.0" top="20.0" />
                      </padding>
+                     <font>
+                        <Font name="Georgia" size="12.800000190734863" />
+                     </font>
                   </Label>
                </children>
             </HBox>
@@ -92,7 +122,7 @@
          <children>
             <Label alignment="CENTER" text="Notifications" textAlignment="CENTER">
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="Georgia Bold" size="12.0" />
                </font>
             </Label>
             <Separator prefWidth="200.0" />

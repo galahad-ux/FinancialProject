@@ -8,15 +8,20 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="392.0" prefWidth="532.8" style="-fx-background-color: #cfcfe1;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.isep.financialproject.DashboardViewController">
    <children>
       <SplitPane dividerPositions="0.1384297520661157, 0.5206611570247934, 0.5" layoutX="33.0" layoutY="37.0" orientation="VERTICAL" prefHeight="292.0" prefWidth="433.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="76.0" prefWidth="158.0" style="-fx-background-color: #cfcfe1;">
                <children>
-                  <Label layoutX="21.0" layoutY="9.0" text="Total Asset:" />
-                  <Label layoutX="104.0" layoutY="9.0" prefHeight="19.0" prefWidth="228.0" text="Label" />
+                  <Label layoutX="21.0" layoutY="9.0" text="Total Asset:">
+                     <font>
+                        <Font name="Georgia" size="12.800000190734863" />
+                     </font></Label>
+                  <Label layoutX="104.0" layoutY="9.0" prefHeight="19.0" prefWidth="228.0" text="Label">
+                     <font>
+                        <Font name="Georgia" size="12.800000190734863" />
+                     </font></Label>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #cfcfe1;">
