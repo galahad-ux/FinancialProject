@@ -80,6 +80,7 @@ public class LoginViewController {
                 throw new RuntimeException(e);
             }
         } else if (!User.authenticate(userEmail,userPassword)) {
+            StoreNotifications.add("Failed login attempt");
             try {
                 showError("Login failed! Please try again");
             } catch (IOException e) {

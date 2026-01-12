@@ -4,8 +4,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -24,6 +27,15 @@ public class PortfolioViewController {
     @FXML
     private AnchorPane contentPane;
 
+    @FXML
+    private ListView<String> notificationsList;
+
+    @FXML
+    private VBox notifications;
+
+    @FXML
+    private Label notifCount;
+
     public void setCurrentUserName(User userFullName) {
         this.currentUserName = userFullName;
         welcomeMsg.setText("Welcome " + userFullName.getUserFullName());
@@ -32,6 +44,8 @@ public class PortfolioViewController {
     @FXML
     public void initialize() {
         date.setText(LocalDate.now().toString());
+        showDashboard();        //default view
+        notifCount();
     }
 
     //logout button
@@ -91,6 +105,31 @@ public class PortfolioViewController {
 
         } catch (Exception e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    //Notifications panel
+    @FXML
+    private void showNotifications(){
+        if (!notifications.isVisible()){
+            notificationsList.getItems().clear();
+            notificationsList.getItems().addAll(StoreNotifications.notifs);
+        }
+        notifications.setVisible(!notifications.isVisible());
+        notifCount();
+    }
+
+    private void addNotification(String message){
+        notificationsList.getItems().add(0,message);
+    }
+
+    private void notifCount(){
+        int count = StoreNotifications.notifs.size();
+        if (count > 0){
+            notifCount.setText("[" + String.valueOf(count) + "]");
+            notifCount.setVisible(true);
+        }else{
+            notifCount.setVisible(false);
         }
     }
 }
