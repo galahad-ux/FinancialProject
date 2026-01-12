@@ -70,6 +70,11 @@ public class PortfolioViewController {
         loadView("Bank-view.fxml");
     }
 
+    @FXML
+    public void showInvestments(){
+        loadView("Investment-view.fxml");
+    }
+
     //switching view in main window
     private void loadView(String fxmlFile){
         try{

@@ -18,7 +18,7 @@
             <Button mnemonicParsing="false" onAction="#showTransfer" prefHeight="27.0" prefWidth="103.0" styleClass="contentButton" stylesheets="@buttonDesign.css" text="Transfer" textFill="WHITE" />
             <Button mnemonicParsing="false" onAction="#showTransactions" prefHeight="27.0" prefWidth="103.0" styleClass="contentButton" stylesheets="@buttonDesign.css" text="Transactions" textFill="WHITE" />
             <Button mnemonicParsing="false" onAction="#showAccount" prefHeight="27.0" prefWidth="103.0" styleClass="contentButton" stylesheets="@buttonDesign.css" text="Bank" textFill="WHITE" />
-            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="104.0" styleClass="contentButton" stylesheets="@buttonDesign.css" text="Investments" textFill="WHITE" />
+            <Button mnemonicParsing="false" onAction="#showInvestments" prefHeight="27.0" prefWidth="104.0" styleClass="contentButton" stylesheets="@buttonDesign.css" text="Investments" textFill="WHITE" />
             <Region prefHeight="143.0" prefWidth="82.0" VBox.vgrow="ALWAYS" />
             <Button mnemonicParsing="false" onAction="#showSettings" prefHeight="27.0" prefWidth="103.0" styleClass="contentButton" stylesheets="@buttonDesign.css" text="User Settings" textFill="WHITE" />
             <Button mnemonicParsing="false" onAction="#BackToLogin" prefHeight="27.0" prefWidth="103.0" styleClass="contentButton" stylesheets="@buttonDesign.css" text="Log out" textFill="WHITE">
