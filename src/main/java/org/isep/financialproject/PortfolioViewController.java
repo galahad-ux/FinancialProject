@@ -94,6 +94,11 @@ public class PortfolioViewController {
         loadView("Dashboard-view.fxml");
     }
 
+    @FXML
+    public void showAnalytics(){
+        loadView("Analytics-view.fxml");
+    }
+
     //switching view in main window
     private void loadView(String fxmlFile){
         try{

@@ -12,17 +12,17 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="392.0" prefWidth="532.8" style="-fx-background-color: #cfcfe1;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.isep.financialproject.TransferViewController">
+<AnchorPane maxHeight="412.0" maxWidth="566.0" prefHeight="412.0" prefWidth="566.0" style="-fx-background-color: #cfcfe1;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.isep.financialproject.TransferViewController">
    <children>
-      <Label layoutX="231.0" layoutY="14.0" text="Transfer ">
+      <Label layoutX="264.0" layoutY="14.0" text="Transfer ">
          <font>
             <Font name="Georgia Bold" size="14.0" />
          </font>
       </Label>
-      <GridPane hgap="15.0" layoutX="50.0" layoutY="67.0" prefHeight="205.0" prefWidth="434.0" vgap="12.0">
+      <GridPane hgap="15.0" layoutX="50.0" layoutY="67.0" prefHeight="265.0" prefWidth="471.0" vgap="12.0">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="205.20001220703125" minWidth="10.0" prefWidth="171.60003662109375" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.39996337890625" minWidth="10.0" prefWidth="248.39996337890625" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="205.20001220703125" minWidth="10.0" prefWidth="164.79993591308593" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="289.60006408691413" minWidth="10.0" prefWidth="289.60006408691413" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -34,7 +34,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Select Account to Transfer">
+            <Label text="Select Account ">
                <padding>
                   <Insets left="10.0" />
                </padding>
@@ -77,6 +77,6 @@
             </MenuButton>
          </children>
       </GridPane>
-      <Button layoutX="243.0" layoutY="320.0" mnemonicParsing="false" stylesheets="@buttonDesign.css" text="Send" />
+      <Button layoutX="273.0" layoutY="350.0" mnemonicParsing="false" stylesheets="@buttonDesign.css" text="Send" />
    </children>
 </AnchorPane>
