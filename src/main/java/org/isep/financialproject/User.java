@@ -1,5 +1,7 @@
 package org.isep.financialproject;
 
+import javafx.scene.control.MenuButton;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +14,7 @@ public class User {
     public static List<User> allUsers = null;
     private final List<Portfolio> portfolios;
 
-    public User(String userFullName, String userEmail, String userPassword, Currency preferredCurrency){
+    public User(String userFullName, String userEmail, String userPassword, Currency preferredCurrency) {
         this.userFullName = userFullName;
         this.userEmail = userEmail;
         this.userPassword = userPassword;
@@ -50,41 +52,42 @@ public class User {
         portfolios.add(portfolio);
     }
 
-    public void removePortfolio (String portfolioName){
+    public void removePortfolio(String portfolioName) {
 
     }
 
-    public void getPortfolio(String portfolioName){
+    public void getPortfolio(String portfolioName) {
 
     }
 
     //Authentication management methods
-    public static User checkEmail(String userEmail){
-        for (User user : allUsers){
-            if(user.getUserEmail().equalsIgnoreCase(userEmail)){
+    public static User checkEmail(String userEmail) {
+        for (User user : allUsers) {
+            if (user.getUserEmail().equalsIgnoreCase(userEmail)) {
                 return user;
             }
         }
         return null;
     }
-    public static boolean emailExists(String userEmail){
+
+    public static boolean emailExists(String userEmail) {
         return checkEmail(userEmail) != null;
     }
 
-    public static boolean register (String userFullName, String userEmail, String userPassword, Currency preferredCurrency){
-        if (emailExists(userEmail)){
+    public static boolean register(String userFullName, String userEmail, String userPassword, Currency preferredCurrency) {
+        if (emailExists(userEmail)) {
             System.out.println("User email already exists");
             return false;
         }
-        User newUser = new User(userFullName,userEmail,userPassword, preferredCurrency);
+        User newUser = new User(userFullName, userEmail, userPassword, preferredCurrency);
         allUsers.add(newUser);
         User.saveAllUsers(allUsers, "users.csv");
         return true;
     }
 
-    public static boolean authenticate(String userEmail, String userPassword){
+    public static boolean authenticate(String userEmail, String userPassword) {
         User user = checkEmail(userEmail);
-        if (user != null && user.getUserPassword().equals(userPassword)){
+        if (user != null && user.getUserPassword().equals(userPassword)) {
             return true;
         }
         return false;
@@ -92,18 +95,18 @@ public class User {
 
 
     //CSV methods
-    public String toCSV(){
+    public String toCSV() {
         return userFullName + "," + userEmail + "," + userPassword + "," + preferredCurrency;
     }
 
-    public static User fromCSV(String csvLine){
+    public static User fromCSV(String csvLine) {
         String[] objects = csvLine.split(",");
 
         //preferred currency
         Currency currency;
-        if (objects.length > 3){
+        if (objects.length > 3) {
             currency = Currency.valueOf(objects[3]);
-        }else{
+        } else {
             currency = Currency.EUR;
         }
 
@@ -111,9 +114,9 @@ public class User {
     }
 
     //saving new user to csv file
-    public static void saveAllUsers(List<User> users, String filepath){
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("users.csv"))){
-            for (User a : users){
+    public static void saveAllUsers(List<User> users, String filepath) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("users.csv"))) {
+            for (User a : users) {
                 writer.write(a.toCSV());
                 writer.newLine();
             }
@@ -123,21 +126,52 @@ public class User {
         }
     }
 
-    public static List<User> loadAllUsers(String filePath){
+    public static List<User> loadAllUsers(String filePath) {
         List<User> users = new ArrayList<>();
-        try (BufferedReader reader = new BufferedReader(new FileReader("users.csv"))){
+        try (BufferedReader reader = new BufferedReader(new FileReader("users.csv"))) {
             String line;
-            while((line = reader.readLine()) != null){
-                if (!line.trim().isEmpty()){
+            while ((line = reader.readLine()) != null) {
+                if (!line.trim().isEmpty()) {
                     users.add(fromCSV(line));
                 }
             }
             System.out.println("Users loaded");
-        }catch (IOException e){
+        } catch (IOException e) {
             System.out.println("Error loading users" + e.getMessage());
         }
         return users;
     }
+
+    //To change user details in csv when changed in settings view
+    public static void newUserDetails(String oldEmail, String changedFullName, String changedEmail, String changedPassword, String changedCurrency) {
+        List<String> details = new ArrayList<>();
+
+        try (BufferedReader reader = new BufferedReader(new FileReader("users.csv"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] data = line.split(",");
+                if (data[1].equals(oldEmail)) {
+                    data[0] = changedFullName;
+                    data[1] = changedEmail;
+                    data[2] = changedPassword;
+                    data[3] = changedCurrency;
+                }
+                details.add(String.join(",", data));
+            }
+            System.out.println("Users details changed");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("users.csv"))) {
+            for (String d : details) {
+                writer.write(d);
+                writer.newLine();
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+}
 
 
 
@@ -148,4 +182,4 @@ public class User {
 //        }
 //        return total;
 //    }
-}
+

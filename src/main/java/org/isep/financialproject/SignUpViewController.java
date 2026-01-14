@@ -112,8 +112,8 @@ public class SignUpViewController {
             //success alert
             Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
             successAlert.setTitle("Successful");
-            successAlert.setHeaderText("Account created successfully");
-            successAlert.setContentText("You may proceed to Login");
+            successAlert.setHeaderText(null);
+            successAlert.setContentText("Success! You may proceed to Login");
             successAlert.show();
 
             try {
