@@ -26,7 +26,8 @@ public class Main2 {
                 Currency.EUR,
                 "SAV-001",
                 54321,
-                1000
+                1000,
+                10
         );
 
         checking.deposit(200, "salary", "employer", user);
@@ -38,7 +39,11 @@ public class Main2 {
         System.out.println("Checking balance: " + checking.getBalance());
         System.out.println("Savings balance: " + savings.getBalance());
 
+        savings.applyInterest();
+        System.out.println("Savings balance after interest: " + savings.getBalance());
+
         System.out.println("Checking transactions: " + checking.getTransactions().size());
         System.out.println("Savings transactions: " + savings.getTransactions().size());
+
     }
 }
