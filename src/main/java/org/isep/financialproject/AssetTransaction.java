@@ -25,5 +25,11 @@ public class AssetTransaction extends Transaction{
     //    return Currency;
     //}
 
+    public String toString() {
+        return "AssetTransaction{" + getId() + ", type=" + type +
+                ", quantity=" + quantity + ", amount=" + getAmount() +
+                ", date=" + getDate() + ", description='" + getDescription()+ '}';
+    }
+
 
 }
