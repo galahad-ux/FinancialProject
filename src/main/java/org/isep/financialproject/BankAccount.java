@@ -2,10 +2,14 @@ package org.isep.financialproject;
 
 import java.util.Date;
 import java.util.Objects;
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class BankAccount extends Portfolio {
     protected String accNum;
     protected double amount;
+
+    protected final List<BankTransaction> transactions = new ArrayList<>();
 
     protected BankAccount(
             String name,
@@ -31,6 +35,11 @@ public abstract class BankAccount extends Portfolio {
         return amount;
     }
 
+    public List<BankTransaction> getTransactions() {
+        return List.copyOf(transactions);
+    }
+
+
 
     public void deposit(double value) {
         if (value <= 0) {
@@ -53,5 +62,54 @@ public abstract class BankAccount extends Portfolio {
     @Override
     public double getValue() {
         return amount;
+    }
+
+    private String generateTransactionId(User user) {
+        Objects.requireNonNull(user, "user cannot be null");
+        return user.getUserEmail() + "-" + System.currentTimeMillis();
+    }
+
+    public void deposit(double value, String description, String recipient, User user) {
+        deposit(value);
+        transactions.add(new BankTransaction(
+                generateTransactionId(user),
+                new Date(),
+                value,
+                description,
+                TransactionType.DEPOSIT,
+                recipient
+        ));
+    }
+
+    public void withdraw(double value, String description, String recipient, User user) {
+        withdraw(value);
+        transactions.add(new BankTransaction(
+                generateTransactionId(user),
+                new Date(),
+                value,
+                description,
+                TransactionType.WITHDRAW,
+                recipient
+        ));
+    }
+
+    public void cancelWithdrawal(User user) {
+        for (int i = transactions.size() - 1; i >= 0; i--) {
+            BankTransaction t = transactions.get(i);
+            if (t.getType() == TransactionType.WITHDRAW) {
+                amount += t.getAmount();
+
+                transactions.add(new BankTransaction(
+                        generateTransactionId(user),
+                        new Date(),
+                        t.getAmount(),
+                        "Cancellation of withdrawal: " + t.getDescription(),
+                        TransactionType.DEPOSIT,
+                        t.getRecipient()
+                ));
+                return;
+            }
+        }
+        throw new IllegalStateException("There is no withdrawal transaction to cancel");
     }
 }
