@@ -7,10 +7,17 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
+import javafx.scene.control.ListView;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class TransactionViewController {
     @FXML
     private Button ATButton;
+    @FXML
+    private ListView<AssetTransaction> txListView;
+    private final ObservableList<AssetTransaction> txItems = FXCollections.observableArrayList();
+
     private final Investment sharedInvestment = new Investment();
 
     public void openAHT() throws IOException {
@@ -25,6 +32,21 @@ public class TransactionViewController {
         stage.setScene(new Scene(root));
         stage.show();
 
+        stage.setOnHidden(e -> refreshTransactions());
+
 
     }
+
+    @FXML
+    private void initialize() {
+        txListView.setItems(txItems);
+        refreshTransactions(); // 初次加载
+    }
+
+    private void refreshTransactions() {
+        txItems.setAll(sharedInvestment.getTransactions());
+    }
+
+
+
 }
