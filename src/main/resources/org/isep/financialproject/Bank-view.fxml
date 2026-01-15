@@ -19,7 +19,7 @@
          <font>
             <Font name="Georgia" size="12.800000190734863" />
          </font></Label>
-      <Label layoutX="151.0" layoutY="52.0" prefHeight="19.0" prefWidth="213.0" text="Label">
+      <Label fx:id="totalBalance" layoutX="151.0" layoutY="52.0" prefHeight="19.0" prefWidth="213.0" text="Label">
          <font>
             <Font name="Georgia" size="12.800000190734863" />
          </font></Label>
@@ -32,10 +32,10 @@
                         <Font name="Georgia Bold" size="12.800000190734863" />
                      </font>
                   </Label>
-                  <TableView layoutY="37.0" prefHeight="279.0" prefWidth="303.0" style="-fx-background-color: lavender;">
+                  <TableView fx:id="bankTable" layoutY="37.0" prefHeight="279.0" prefWidth="303.0" style="-fx-background-color: lavender;">
                     <columns>
-                      <TableColumn prefWidth="210.39992982149124" text="Type" />
-                      <TableColumn prefWidth="92.80006408691406" text="Amount" />
+                      <TableColumn fx:id="typeCol" prefWidth="210.39992982149124" text="Type" />
+                      <TableColumn fx:id="balanceCol" prefWidth="92.80006408691406" text="Amount" />
                     </columns>
                   </TableView>
                </children>

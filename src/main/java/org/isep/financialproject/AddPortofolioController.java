@@ -48,10 +48,8 @@ public class AddPortofolioController {
     @FXML
     private void openBPV() {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ChooseBankAccount.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("CreateChecking.fxml"));
             Parent root = fxmlLoader.load();
-
-            ChooseBankAccountController controller = fxmlLoader.getController();
 
             Stage stage = new Stage();
             stage.setTitle("Create bank Account");
