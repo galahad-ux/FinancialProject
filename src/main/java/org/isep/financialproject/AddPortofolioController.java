@@ -16,10 +16,10 @@ public class AddPortofolioController {
     private Button AssestButton;
 
     private Investment investment;
-
     public void setInvestment(Investment investment) {
         this.investment = investment;
     }
+
     @FXML
     public void openBankChoice() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/isep/financialproject/ChooseBankAccount.fxml"));
@@ -35,6 +35,10 @@ public class AddPortofolioController {
     public void openAAV() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddAsset-view.fxml"));
         Parent root = fxmlLoader.load();
+
+        AddAssestController controller = fxmlLoader.getController();
+        controller.setInvestment(investment);
+
         Stage stage = new Stage();
         stage.setTitle("Add Asset");
         stage.setScene(new Scene(root));
