@@ -10,11 +10,19 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class ChooseBankAccountController {
+
    @FXML
     private Button CheckingsButton;
 
    @FXML
     private Button SavingsButton;
+
+    private User user;
+
+    public void setUser(User user){
+        this.user = user;
+    }
+
 
     @FXML
     private void openCV() {
@@ -23,9 +31,10 @@ public class ChooseBankAccountController {
             Parent root = fxmlLoader.load();
 
             CreateCheckingController controller = fxmlLoader.getController();
+            controller.setUser(user);
 
             Stage stage = new Stage();
-            stage.setTitle("Create checkings Account");
+            stage.setTitle("Create Checking Account");
             stage.setScene(new Scene(root));
             stage.showAndWait();
 
@@ -41,6 +50,7 @@ public class ChooseBankAccountController {
             Parent root = fxmlLoader.load();
 
             CreateSavingsController controller = fxmlLoader.getController();
+            controller.setUser(user);
 
             Stage stage = new Stage();
             stage.setTitle("Create savings Account");
@@ -51,7 +61,4 @@ public class ChooseBankAccountController {
             throw new RuntimeException(e);
         }
     }
-
-
-
 }

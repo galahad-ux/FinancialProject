@@ -1,9 +1,13 @@
 package org.isep.financialproject;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import java.io.IOException;
 
 public class CreateCheckingController {
     @FXML private TextField nameField;
@@ -21,7 +25,7 @@ public class CreateCheckingController {
     }
 
     @FXML
-    private void handleCreate(ActionEvent event) {
+    private void handleCreate() {
         try {
             if (user == null) {
                 messageLabel.setText("Error: no logged-in user.");
@@ -38,12 +42,42 @@ public class CreateCheckingController {
 
             user.createCheckingAccount(name, description, accNum, initialAmount, withdrawLimit, spendLimit);
 
-            messageLabel.setText("Checking account created!");
+            goToBankView();
 
         } catch (NumberFormatException e) {
             messageLabel.setText("Please enter valid numbers.");
         } catch (Exception e) {
             messageLabel.setText("Error: " + e.getMessage());
         }
+    }
+
+    @FXML
+    private void handleBack() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/isep/financialproject/ChooseBankAccount.fxml"));
+            Parent root = loader.load();
+
+            ChooseBankAccountController controller = loader.getController();
+            controller.setUser(user);
+
+            Stage stage = (Stage) nameField.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        } catch (IOException e) {
+            messageLabel.setText("Error: " + e.getMessage());
+        }
+    }
+
+    private void goToBankView() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/isep/financialproject/Bank-view.fxml"));
+        Parent root = loader.load();
+
+        BankViewController controller = loader.getController();
+        controller.setUser(user);
+
+        Stage stage = (Stage) nameField.getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 }
