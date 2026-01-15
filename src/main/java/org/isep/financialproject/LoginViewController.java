@@ -8,6 +8,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.List;
 
 public class LoginViewController {
 
@@ -90,6 +91,10 @@ public class LoginViewController {
         } else {
             LoggedInUser.currentUserEmail = userEmail;
             LoggedInUser.currentUser = User.checkEmail(userEmail);
+            List<BankAccount> accounts = bankAccountCSV.loadAccountsForUser(userEmail);
+            for (BankAccount a:accounts){
+                LoggedInUser.currentUser.addPortfolio(a);
+            }
 
             LoggedInUser.investment = UserAssetStorage.load(userEmail);
 

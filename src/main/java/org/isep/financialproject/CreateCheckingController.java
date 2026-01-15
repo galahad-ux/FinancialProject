@@ -41,6 +41,7 @@ public class CreateCheckingController {
         }
 
         LoggedInUser.currentUser.addPortfolio(account);
+        bankAccountCSV.saveAccount(LoggedInUser.currentUserEmail, account);
         ((Stage) initialAmountField.getScene().getWindow()).close();
     }
 }
