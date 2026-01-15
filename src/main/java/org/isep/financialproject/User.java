@@ -11,7 +11,7 @@ public class User {
     public String userEmail;
     public String userPassword;
     public Currency preferredCurrency;
-    public static List<User> allUsers = new ArrayList<>();
+    public static List<User> allUsers = null;
     private final List<Portfolio> portfolios;
 
     public User(String userFullName, String userEmail, String userPassword, Currency preferredCurrency) {
@@ -53,83 +53,11 @@ public class User {
     }
 
     public void removePortfolio(String portfolioName) {
-        for (int i = 0; i < portfolios.size(); i++) {
-            if (portfolios.get(i).getName().equalsIgnoreCase(portfolioName)) {
-                portfolios.remove(i);
-                return;
-            }
-        }
+
     }
 
-    public getPortfolio(String portfolioName) {
-        for (Portfolio portfolio : portfolios){
-            if (portfolio.getName().equalsIgnoreCase(portfolioName)){
-                return portfolio;
-            }
-        }
-        return null;
-    }
+    public void getPortfolio(String portfolioName) {
 
-
-    //BankAccount helpers
-    public CheckingAccount createCheckingAccount(
-            String name,
-            String description,
-            String accNum,
-            double initialAmount,
-            double withdrawLimit,
-            double spendLimit
-    ) {
-        CheckingAccount account = new CheckingAccount(
-                name,
-                description,
-                preferredCurrency,
-                accNum,
-                initialAmount,
-                withdrawLimit,
-                spendLimit
-        );
-        addPortfolio(account);
-        return account;
-    }
-
-    public SavingsAccount createSavingsAccount(
-            String name,
-            String description,
-            String accNum,
-            double initialAmount,
-            double withdrawLimit
-    ) {
-        SavingsAccount account = new SavingsAccount(
-                name,
-                description,
-                preferredCurrency,
-                accNum,
-                initialAmount,
-                withdrawLimit
-        );
-        addPortfolio(account);
-        return account;
-    }
-
-
-    public List<BankAccount> getBankAccounts() {
-        List<BankAccount> result = new ArrayList<>();
-        for (Portfolio portfolio : portfolios) {
-            if (portfolio instanceof BankAccount) {
-                result.add((BankAccount) portfolio);
-            }
-        }
-        return result;
-    }
-
-    public BankAccount findBankAccountByAccNum(String accNum) {
-        for (BankAccount account : getBankAccounts()) {
-            if (account.getAccNum().equals(accNum)) {
-                return account;
-            }
-        }
-        return null;
     }
 
     //Authentication management methods
@@ -153,7 +81,7 @@ public class User {
         }
         User newUser = new User(userFullName, userEmail, userPassword, preferredCurrency);
         allUsers.add(newUser);
-        saveAllUsers(allUsers, "users.csv");
+        User.saveAllUsers(allUsers, "users.csv");
         return true;
     }
 
@@ -162,7 +90,6 @@ public class User {
         if (user != null && user.getUserPassword().equals(userPassword)) {
             return true;
         }
-
         return false;
     }
 
@@ -189,7 +116,7 @@ public class User {
     //saving new user to csv file
     public static void saveAllUsers(List<User> users, String filepath) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("users.csv"))) {
-            for (User user : users) {
+            for (User a : users) {
                 writer.write(a.toCSV());
                 writer.newLine();
             }
@@ -212,7 +139,6 @@ public class User {
         } catch (IOException e) {
             System.out.println("Error loading users" + e.getMessage());
         }
-
         return users;
     }
 
