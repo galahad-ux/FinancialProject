@@ -171,6 +171,9 @@ public class User {
             throw new RuntimeException(e);
         }
     }
+
+    public void createCheckingAccount(String name, String description, String accNum, double initialAmount, double withdrawLimit, double spendLimit) {
+    }
 }
 
 
