@@ -6,9 +6,12 @@
 
 <AnchorPane prefHeight="131.0" prefWidth="250.0" style="-fx-background-color: lavender;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.isep.financialproject.AddPortofolioController">
    <children>
-      <Label layoutX="23.0" layoutY="26.0" text="PLease choose your Portofolio type" />
-      <Button fx:id="BankButton" layoutX="33.0" layoutY="86.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="76.0" stylesheets="@buttonDesign.css" text="Bank" />
+      <Label layoutX="23.0" layoutY="26.0" text="PLease choose your Portfolio type" />
+
+      <Button fx:id="BankButton" layoutX="33.0" layoutY="86.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="76.0" stylesheets="@buttonDesign.css" text="Bank account"  onAction="#openBankChoice"/>
+
       <Button fx:id="AssestButton" layoutX="143.0" layoutY="86.0" mnemonicParsing="false" onAction="#openAAV" prefHeight="23.0" prefWidth="76.0" stylesheets="@buttonDesign.css" text="Assest" />
+       
       <Label layoutX="95.0" layoutY="58.0" prefHeight="15.0" prefWidth="58.0" text="(=^ェ^=)" />
    </children>
 </AnchorPane>
