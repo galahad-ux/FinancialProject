@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="269.0" prefWidth="418.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.isep.financialproject.AssetTransactionController">
+<AnchorPane prefHeight="269.0" prefWidth="418.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.isep.financialproject.AddAssetTransactionController">
    <children>
       <Label layoutX="99.0" layoutY="24.0" text="create your Asset Transaction(^_−)−☆" />
       <Label layoutX="44.0" layoutY="62.0" text="Symbol" />

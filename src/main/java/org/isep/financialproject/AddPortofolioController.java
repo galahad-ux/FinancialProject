@@ -8,15 +8,15 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
 
-public class DashboardViewController {
+public class AddPortofolioController {
     @FXML
-    Button APButton;
+    Button AssestButton;
 
-    public void openAPV() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddPortofolio.fxml"));
+    public void openAAV() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddAsset-view.fxml"));
         Parent root = fxmlLoader.load();
         Stage stage = new Stage();
-        stage.setTitle("Add Portfolio");
+        stage.setTitle("Add Assest");
         stage.setScene(new Scene(root));
         stage.show();
 
@@ -24,8 +24,5 @@ public class DashboardViewController {
     }
 
 
+
 }
-
-
-
-
