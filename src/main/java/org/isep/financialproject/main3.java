@@ -23,6 +23,12 @@ public class main3 {
         for (AssetTransaction t : investment.getTransactions()) {
             System.out.println(t);
         }
+        System.out.println("the second sell:");
+        investment.sell("BTC", 300, Bprice, now);
+        for (AssetTransaction t : investment.getTransactions()) {
+            System.out.println(t);
+        }
+        investment.sell("BTC", 30000, Bprice, now);
 
 
 

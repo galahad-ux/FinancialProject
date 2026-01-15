@@ -3,9 +3,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="131.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.isep.financialproject.AddPortofolioController">
+<AnchorPane prefHeight="131.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.isep.financialproject.AddTransactionController">
    <children>
-      <Label layoutX="23.0" layoutY="26.0" text="PLease choose your Portofolio type" />
+      <Label layoutX="18.0" layoutY="27.0" text="PLease choose your Transaction type" />
       <Button fx:id="BankButton" layoutX="33.0" layoutY="86.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="76.0" text="Bank" />
       <Button fx:id="AssestButton" layoutX="143.0" layoutY="86.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="76.0" text="Assest" />
       <Label layoutX="95.0" layoutY="58.0" prefHeight="15.0" prefWidth="58.0" text="(=^ェ^=)" />
