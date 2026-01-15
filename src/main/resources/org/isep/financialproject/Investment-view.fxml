@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="412.0" prefWidth="566.0" style="-fx-background-color: #cfcfe1;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.isep.financialproject.InvestmentViewController">
+<AnchorPane prefHeight="412.0" prefWidth="566.0" style="-fx-background-color: #cfcfe1;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.isep.financialproject.InvestmentViewController">
    <children>
       <Label layoutX="238.0" layoutY="14.0" text="Investments">
          <font>
@@ -14,13 +12,13 @@
          </font>
       </Label>
       <Label layoutX="39.0" layoutY="41.0" text="Total Asset:" />
-      <Label layoutX="114.0" layoutY="41.0" prefHeight="19.0" prefWidth="223.0" text="Label" />
-      <TableView layoutX="-1.0" layoutY="69.0" prefHeight="343.0" prefWidth="566.0" style="-fx-background-color: lavender;">
+      <Label fx:id="TotalAmount" layoutX="114.0" layoutY="41.0" prefHeight="19.0" prefWidth="223.0" text="Label" />
+      <TableView fx:id="assetTable" layoutX="-1.0" layoutY="69.0" prefHeight="343.0" prefWidth="566.0" style="-fx-background-color: lavender;">
         <columns>
-          <TableColumn prefWidth="192.0" text="Company" />
-          <TableColumn minWidth="0.0" prefWidth="128.00006103515625" text="Type" />
-            <TableColumn prefWidth="81.5999755859375" text="Quantity" />
-            <TableColumn minWidth="0.0" prefWidth="166.4000244140625" text="Amount" />
+          <TableColumn fx:id="NameTable" prefWidth="192.0" text="Symbol" />
+          <TableColumn fx:id="TypeTable" minWidth="0.0" prefWidth="128.00006103515625" text="Type" />
+            <TableColumn fx:id="QuantityTable" prefWidth="81.5999755859375" text="Quantity" />
+            <TableColumn fx:id="AmoutTable" minWidth="0.0" prefWidth="166.4000244140625" text="Amount" />
         </columns>
       </TableView>
    </children>

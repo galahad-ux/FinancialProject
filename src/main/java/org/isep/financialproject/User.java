@@ -11,7 +11,7 @@ public class User {
     public String userEmail;
     public String userPassword;
     public Currency preferredCurrency;
-    public static List<User> allUsers = null;
+    public static List<User> allUsers = new ArrayList<>();
     private final List<Portfolio> portfolios;
 
     public User(String userFullName, String userEmail, String userPassword, Currency preferredCurrency) {
@@ -173,9 +173,26 @@ public class User {
     }
 
     public void createCheckingAccount(String name, String description, String accNum, double initialAmount, double withdrawLimit, double spendLimit) {
+        CheckingAccount account = new CheckingAccount(name, description, preferredCurrency, accNum, initialAmount, withdrawLimit, spendLimit);
+
+        addPortfolio(account);
     }
 
     public void createSavingsAccount(String name, String description, String accNum, double initialAmount, double withdrawLimit) {
+        SavingsAccount account = new SavingsAccount(name, description, preferredCurrency, accNum, initialAmount, withdrawLimit);
+        addPortfolio(account);
+    }
+
+    public List<BankAccount> getBankAccounts() {
+        List<BankAccount> result = new ArrayList<>();
+
+        for (Portfolio p : portfolios) {
+            if (p instanceof BankAccount) {
+                result.add((BankAccount) p);
+            }
+        }
+
+        return result;
     }
 }
 
