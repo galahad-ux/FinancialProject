@@ -65,43 +65,43 @@ public class PortfolioViewController {
     }
 
     @FXML
-    public void showSettings(){
+    public void showSettings() {
         loadView("Settings-view.fxml");
     }
 
     @FXML
-    public void showTransfer(){
+    public void showTransfer() {
         loadView("Transfer-view.fxml");
     }
 
     @FXML
-    public void showTransactions(){
+    public void showTransactions() {
         loadView("Transaction-view.fxml");
     }
 
     @FXML
-    public void showAccount(){
+    public void showAccount() {
         loadView("Bank-view.fxml");
     }
 
     @FXML
-    public void showInvestments(){
+    public void showInvestments() {
         loadView("Investment-view.fxml");
     }
 
     @FXML
-    public void showDashboard(){
+    public void showDashboard() {
         loadView("Dashboard-view.fxml");
     }
 
     @FXML
-    public void showAnalytics(){
+    public void showAnalytics() {
         loadView("Analytics-view.fxml");
     }
 
     //switching view in main window
-    private void loadView(String fxmlFile){
-        try{
+    private void loadView(String fxmlFile) {
+        try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlFile));
             Parent root = fxmlLoader.load();
 
@@ -115,8 +115,8 @@ public class PortfolioViewController {
 
     //Notifications panel
     @FXML
-    private void showNotifications(){
-        if (!notifications.isVisible()){
+    private void showNotifications() {
+        if (!notifications.isVisible()) {
             notificationsList.getItems().clear();
             notificationsList.getItems().addAll(StoreNotifications.notifs);
         }
@@ -124,16 +124,16 @@ public class PortfolioViewController {
         notifCount();
     }
 
-    private void addNotification(String message){
-        notificationsList.getItems().add(0,message);
+    private void addNotification(String message) {
+        notificationsList.getItems().add(0, message);
     }
 
-    private void notifCount(){
+    private void notifCount() {
         int count = StoreNotifications.notifs.size();
-        if (count > 0){
+        if (count > 0) {
             notifCount.setText("[" + String.valueOf(count) + "]");
             notifCount.setVisible(true);
-        }else{
+        } else {
             notifCount.setVisible(false);
         }
     }
