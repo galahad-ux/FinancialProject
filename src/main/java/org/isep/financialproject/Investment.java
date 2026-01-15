@@ -13,6 +13,7 @@ public class Investment {
         return transactions;
     }
 
+
     private Asset findAsset(String symbol) {
         for (Asset a : assets) {
             if (a.getSymbol().equalsIgnoreCase(symbol)) return a;

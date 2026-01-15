@@ -10,7 +10,8 @@ import java.io.IOException;
 
 public class DashboardViewController {
     @FXML
-    Button APButton;
+    private Button APButton;
+
 
     public void openAPV() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddPortofolio.fxml"));

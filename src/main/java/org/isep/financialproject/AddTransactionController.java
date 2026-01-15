@@ -9,15 +9,26 @@ import java.io.IOException;
 
 public class AddTransactionController {
     @FXML
-    Button AssestButton;
+    private Button AssetButton;
+
+    private Investment investment;
+    public void setInvestment(Investment investment) {
+        this.investment = investment;
+    }
 
     public void openAssetT() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddAssetTransaction.fxml"));
         Parent root = fxmlLoader.load();
+
+        AddAssetTransactionController controller = fxmlLoader.getController();
+        controller.setInvestment(investment);
+
         Stage stage = new Stage();
         stage.setTitle("Add Asset Transaction");
         stage.setScene(new Scene(root));
         stage.show();
+
+
 
 
     }

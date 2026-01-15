@@ -10,11 +10,16 @@ import java.io.IOException;
 
 public class TransactionViewController {
     @FXML
-    Button ATButton;
+    private Button ATButton;
+    private final Investment sharedInvestment = new Investment();
 
     public void openAHT() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddTransaction.fxml"));
         Parent root = fxmlLoader.load();
+
+        AddTransactionController controller = fxmlLoader.getController();
+        controller.setInvestment(sharedInvestment);
+
         Stage stage = new Stage();
         stage.setTitle("Add Transaction");
         stage.setScene(new Scene(root));
