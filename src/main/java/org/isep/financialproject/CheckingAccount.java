@@ -4,15 +4,7 @@ public class CheckingAccount extends BankAccount {
     private final double withdrawLimit;
     private final double spendLimit;
 
-    public CheckingAccount(
-            String name,
-            String description,
-            Currency refCurrency,
-            String accNum,
-            double initialAmount,
-            double withdrawLimit,
-            double spendLimit
-    ) {
+    public CheckingAccount(String name, String description, Currency refCurrency, String accNum, double initialAmount, double withdrawLimit, double spendLimit) {
         super(name, description, refCurrency, accNum, initialAmount);
         this.withdrawLimit = withdrawLimit;
         this.spendLimit = spendLimit;

@@ -4,15 +4,7 @@ public class SavingsAccount extends BankAccount {
     private final double withdrawLimit;
     private final double interestRate;
 
-    public SavingsAccount(
-            String name,
-            String description,
-            Currency refCurrency,
-            String accNum,
-            double initialAmount,
-            double withdrawLimit,
-            double interestRate
-    ) {
+    public SavingsAccount(String name, String description, Currency refCurrency, String accNum, double initialAmount, double withdrawLimit, double interestRate) {
         super(name, description, refCurrency, accNum, initialAmount);
         this.withdrawLimit = withdrawLimit;
         this.interestRate = interestRate;
