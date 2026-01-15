@@ -19,8 +19,8 @@
          <font>
             <Font name="Georgia" size="12.800000190734863" />
          </font></Label>
-      <Label layoutX="151.0" layoutY="52.0" prefHeight="19.0" prefWidth="213.0" text="Label">
-         <font>
+       <Label fx:id="totalBalanceLabel" layoutX="151.0" layoutY="52.0" prefHeight="19.0" prefWidth="213.0" text="0">
+       <font>
             <Font name="Georgia" size="12.800000190734863" />
          </font></Label>
       <SplitPane dividerPositions="0.5423003802281369" layoutX="1.0" layoutY="83.0" prefHeight="316.0" prefWidth="566.0">
@@ -32,12 +32,12 @@
                         <Font name="Georgia Bold" size="12.800000190734863" />
                      </font>
                   </Label>
-                  <TableView layoutY="37.0" prefHeight="279.0" prefWidth="303.0" style="-fx-background-color: lavender;">
-                    <columns>
-                      <TableColumn prefWidth="210.39992982149124" text="Type" />
-                      <TableColumn prefWidth="92.80006408691406" text="Amount" />
-                    </columns>
-                  </TableView>
+                   <TableView fx:id="accountsTable" layoutY="37.0" prefHeight="279.0" prefWidth="303.0" style="-fx-background-color: lavender;">
+                       <columns>
+                           <TableColumn fx:id="typeColumn" prefWidth="210.3999" text="Type" />
+                           <TableColumn fx:id="amountColumn" prefWidth="92.8000" text="Amount" />
+                       </columns>
+                   </TableView>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #cfcfe1;">
