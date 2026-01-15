@@ -174,6 +174,9 @@ public class User {
 
     public void createCheckingAccount(String name, String description, String accNum, double initialAmount, double withdrawLimit, double spendLimit) {
     }
+
+    public void createSavingsAccount(String name, String description, String accNum, double initialAmount, double withdrawLimit) {
+    }
 }
 
 
