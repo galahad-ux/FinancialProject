@@ -171,38 +171,5 @@ public class User {
             throw new RuntimeException(e);
         }
     }
-
-    public void createCheckingAccount(String name, String description, String accNum, double initialAmount, double withdrawLimit, double spendLimit) {
-        CheckingAccount account = new CheckingAccount(name, description, preferredCurrency, accNum, initialAmount, withdrawLimit, spendLimit);
-
-        addPortfolio(account);
-    }
-
-    public void createSavingsAccount(String name, String description, String accNum, double initialAmount, double withdrawLimit) {
-        SavingsAccount account = new SavingsAccount(name, description, preferredCurrency, accNum, initialAmount, withdrawLimit);
-        addPortfolio(account);
-    }
-
-    public List<BankAccount> getBankAccounts() {
-        List<BankAccount> result = new ArrayList<>();
-
-        for (Portfolio p : portfolios) {
-            if (p instanceof BankAccount) {
-                result.add((BankAccount) p);
-            }
-        }
-
-        return result;
-    }
 }
-
-
-
-//    public double getNetWorth() {
-//        double total = 0;
-//        for (Portfolio p : portfolios) {
-//            total += p.getValue();
-//        }
-//        return total;
-//    }
 

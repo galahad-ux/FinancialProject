@@ -19,30 +19,30 @@ public class CreateSavingsController {
         this.user = user;
     }
 
-    @FXML
-    private void handleCreate(ActionEvent event) {
-        try {
-            if (user == null) {
-                messageLabel.setText("Error: no logged-in user.");
-                return;
-            }
-
-            String name = nameField.getText();
-            String description = descriptionField.getText();
-            String accNum = accNumField.getText();
-
-            double initialAmount = Double.parseDouble(initialAmountField.getText());
-            double withdrawLimit = Double.parseDouble(withdrawLimitField.getText());
-
-            user.createSavingsAccount(name, description, accNum, initialAmount, withdrawLimit);
-
-            messageLabel.setText("Savings account created!");
-
-
-        } catch (NumberFormatException e) {
-            messageLabel.setText("Please enter valid numbers.");
-        } catch (Exception e) {
-            messageLabel.setText("Error: " + e.getMessage());
-        }
-    }
+//    @FXML
+//    private void handleCreate(ActionEvent event) {
+//        try {
+//            if (user == null) {
+//                messageLabel.setText("Error: no logged-in user.");
+//                return;
+//            }
+//
+//            String name = nameField.getText();
+//            String description = descriptionField.getText();
+//            String accNum = accNumField.getText();
+//
+//            double initialAmount = Double.parseDouble(initialAmountField.getText());
+//            double withdrawLimit = Double.parseDouble(withdrawLimitField.getText());
+//
+//            user.createSavingsAccount(name, description, accNum, initialAmount, withdrawLimit);
+//
+//            messageLabel.setText("Savings account created!");
+//
+//
+//        } catch (NumberFormatException e) {
+//            messageLabel.setText("Please enter valid numbers.");
+//        } catch (Exception e) {
+//            messageLabel.setText("Error: " + e.getMessage());
+//        }
+//    }
 }
