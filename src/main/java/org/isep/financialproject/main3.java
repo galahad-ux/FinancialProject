@@ -18,7 +18,7 @@ public class main3 {
 
         investment.buyToken("BTC","BTCCoin",1234,Bprice,now);
         investment.sell("BTC", 3, Bprice, now);
-        //getStockPrice can only use one at the same time,Request will be throttled which asked over once;
+        //getStockPrice can only use one symbol at the same time,Request will be throttled which asked over once;
 
         for (AssetTransaction t : investment.getTransactions()) {
             System.out.println(t);
