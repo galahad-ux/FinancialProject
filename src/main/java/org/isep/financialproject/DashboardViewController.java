@@ -14,7 +14,7 @@ public class DashboardViewController {
 
 
     public void openAPV() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddPortofolio.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddPortfolio.fxml"));
         Parent root = fxmlLoader.load();
         Stage stage = new Stage();
         stage.setTitle("Add Portfolio");
