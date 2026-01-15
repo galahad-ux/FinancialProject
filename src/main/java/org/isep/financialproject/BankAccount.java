@@ -11,13 +11,7 @@ public abstract class BankAccount extends Portfolio {
 
     protected final List<BankTransaction> transactions = new ArrayList<>();
 
-    protected BankAccount(
-            String name,
-            String description,
-            Currency refCurrency,
-            String accNum,
-            double initialAmount
-    ) {
+    protected BankAccount(String name, String description, Currency refCurrency, String accNum, double initialAmount) {
         super(name, description, refCurrency, new Date());
         this.accNum = Objects.requireNonNull(accNum, "accNum cannot be null");
 
@@ -71,26 +65,12 @@ public abstract class BankAccount extends Portfolio {
 
     public void deposit(double value, String description, String recipient, User user) {
         deposit(value);
-        transactions.add(new BankTransaction(
-                generateTransactionId(user),
-                new Date(),
-                value,
-                description,
-                TransactionType.DEPOSIT,
-                recipient
-        ));
+        transactions.add(new BankTransaction(generateTransactionId(user), new Date(), value, description, TransactionType.DEPOSIT, recipient));
     }
 
     public void withdraw(double value, String description, String recipient, User user) {
         withdraw(value);
-        transactions.add(new BankTransaction(
-                generateTransactionId(user),
-                new Date(),
-                value,
-                description,
-                TransactionType.WITHDRAW,
-                recipient
-        ));
+        transactions.add(new BankTransaction(generateTransactionId(user), new Date(), value, description, TransactionType.WITHDRAW, recipient));
     }
 
     public void cancelWithdrawal(User user) {
@@ -99,14 +79,7 @@ public abstract class BankAccount extends Portfolio {
             if (t.getType() == TransactionType.WITHDRAW) {
                 amount += t.getAmount();
 
-                transactions.add(new BankTransaction(
-                        generateTransactionId(user),
-                        new Date(),
-                        t.getAmount(),
-                        "Cancellation of withdrawal: " + t.getDescription(),
-                        TransactionType.DEPOSIT,
-                        t.getRecipient()
-                ));
+                transactions.add(new BankTransaction(generateTransactionId(user), new Date(), t.getAmount(), "Cancellation of withdrawal: " + t.getDescription(), TransactionType.DEPOSIT, t.getRecipient()));
                 return;
             }
         }
