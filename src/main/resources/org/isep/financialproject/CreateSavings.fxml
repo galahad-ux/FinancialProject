@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="230.0" prefWidth="340.0"
-            xmlns="http://javafx.com/javafx/17.0.12"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="org.isep.financialproject.CreateSavingsController">
+<AnchorPane prefHeight="230.0" prefWidth="340.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.isep.financialproject.CreateSavingsController">
 
     <children>
-        <Label layoutX="20.0" layoutY="15.0" text="Create Savings Account" style="-fx-font-size: 16px;" />
+        <Label layoutX="20.0" layoutY="15.0" style="-fx-font-size: 16px;" text="Create Savings Account" />
 
         <Label layoutX="20.0" layoutY="55.0" text="Name:" />
         <TextField fx:id="nameField" layoutX="160.0" layoutY="50.0" prefWidth="160.0" />
@@ -29,8 +25,8 @@
         <Label layoutX="20.0" layoutY="195.0" text="Withdraw limit:" />
         <TextField fx:id="withdrawLimitField" layoutX="160.0" layoutY="190.0" prefWidth="160.0" />
 
-        <Button layoutX="60.0" layoutY="225.0" text="Back" onAction="#handleBack"/>
-        <Button layoutX="220.0" layoutY="225.0" text="Create" onAction="#handleCreate"/>
+        <Button layoutX="60.0" layoutY="225.0" text="Back" />
+        <Button layoutX="220.0" layoutY="225.0" text="Create" />
 
         <Label fx:id="messageLabel" layoutX="20.0" layoutY="255.0" prefWidth="320.0" />
     </children>

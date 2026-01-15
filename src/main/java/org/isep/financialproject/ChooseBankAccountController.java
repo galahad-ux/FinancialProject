@@ -5,27 +5,53 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import java.io.IOException;
 
 public class ChooseBankAccountController {
-    @FXML
-    private void handleChecking(ActionEvent event) throws IOException {
-        goTo(event, "CreateChecking.fxml");
-    }
+   @FXML
+    private Button CheckingsButton;
+
+   @FXML
+    private Button SavingsButton;
 
     @FXML
-    private void handleSavings(ActionEvent event) throws IOException {
-        goTo(event, "CreateSavings.fxml");
+    private void openCV() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("CreateChecking.fxml"));
+            Parent root = fxmlLoader.load();
+
+            CreateCheckingController controller = fxmlLoader.getController();
+
+            Stage stage = new Stage();
+            stage.setTitle("Create checkings Account");
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    private void goTo(ActionEvent event, String fxml) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
-        Parent root = loader.load();
+    @FXML
+    private void openSV() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("CreateSavings.fxml"));
+            Parent root = fxmlLoader.load();
 
-        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.show();
+            CreateSavingsController controller = fxmlLoader.getController();
+
+            Stage stage = new Stage();
+            stage.setTitle("Create savings Account");
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
+
+
 
 }

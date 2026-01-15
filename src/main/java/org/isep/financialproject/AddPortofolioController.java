@@ -24,6 +24,22 @@ public class AddPortofolioController {
         stage.show();
     }
 
+    @FXML
+    private void openBPV() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ChooseBankAccount.fxml"));
+            Parent root = fxmlLoader.load();
 
+            ChooseBankAccountController controller = fxmlLoader.getController();
+
+            Stage stage = new Stage();
+            stage.setTitle("Create bank Account");
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 }

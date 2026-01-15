@@ -8,7 +8,7 @@
    <children>
       <Label layoutX="23.0" layoutY="26.0" text="PLease choose your Portfolio type" />
 
-      <Button fx:id="BankButton" layoutX="33.0" layoutY="86.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="76.0" stylesheets="@buttonDesign.css" text="Bank account"  onAction="#openBankChoice"/>
+      <Button fx:id="BankButton" layoutX="33.0" layoutY="86.0" mnemonicParsing="false" onAction="#openBPV" prefHeight="23.0" prefWidth="76.0" stylesheets="@buttonDesign.css" text="Bank account" />
 
       <Button fx:id="AssestButton" layoutX="143.0" layoutY="86.0" mnemonicParsing="false" onAction="#openAAV" prefHeight="23.0" prefWidth="76.0" stylesheets="@buttonDesign.css" text="Assest" />
        

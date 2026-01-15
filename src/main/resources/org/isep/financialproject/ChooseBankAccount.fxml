@@ -13,11 +13,11 @@
             <Font name="Georgia" size="18.0" />
          </font></Label>
 
-        <Button layoutX="47.0" layoutY="80.0" onAction="#handleChecking" text="Checking">
+        <Button layoutX="47.0" layoutY="80.0" onAction="#openCV" text="Checking">
          <font>
             <Font name="Georgia" size="13.0" />
          </font></Button>
-        <Button layoutX="162.0" layoutY="80.0" onAction="#handleSavings" text="Savings">
+        <Button layoutX="162.0" layoutY="80.0" onAction="#openSV" text="Savings">
          <font>
             <Font name="Georgia" size="13.0" />
          </font></Button>
