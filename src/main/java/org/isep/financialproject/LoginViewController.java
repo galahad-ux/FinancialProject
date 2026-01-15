@@ -90,6 +90,9 @@ public class LoginViewController {
         } else {
             LoggedInUser.currentUserEmail = userEmail;
             LoggedInUser.currentUser = User.checkEmail(userEmail);
+
+            LoggedInUser.investment = InvestmentStorage.load(userEmail);
+
             try{
                 openPortfolioWindow(userEmail);
             } catch (IOException e) {

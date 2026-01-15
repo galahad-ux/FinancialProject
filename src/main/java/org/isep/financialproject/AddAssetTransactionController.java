@@ -99,6 +99,7 @@ public class AddAssetTransactionController {
 
         Message.setText(("BUY success:" + s + " qty:" + quantity + " price:" + price+"Date:"+date));
 
+        InvestmentStorage.save(LoggedInUser.currentUserEmail, investment);
         clearInputs();
         return;
 
@@ -161,6 +162,7 @@ public class AddAssetTransactionController {
 
         Message.setText(("Sell success:" + s + " qty:" + quantity + " price:" + price+"Date:"+date));
 
+        InvestmentStorage.save(LoggedInUser.currentUserEmail, investment);
         clearInputs();
         return;
 

@@ -18,7 +18,7 @@ public class TransactionViewController {
     private ListView<AssetTransaction> txListView;
     private final ObservableList<AssetTransaction> txItems = FXCollections.observableArrayList();
 
-    private final Investment sharedInvestment = new Investment();
+    private Investment sharedInvestment;
 
     public void openAHT() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddTransaction.fxml"));
@@ -39,8 +39,9 @@ public class TransactionViewController {
 
     @FXML
     private void initialize() {
+        sharedInvestment = LoggedInUser.investment;
         txListView.setItems(txItems);
-        refreshTransactions(); // 初次加载
+        refreshTransactions();
     }
 
     private void refreshTransactions() {
