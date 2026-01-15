@@ -77,5 +77,36 @@ public class Investment {
         if (asset.getQuantity() == 0) assets.remove(asset);
     }
 
+    public void addStock(String symbol, String companyName,
+                         double quantity, double price, Date date) {
+        Asset asset = findAsset(symbol);
+        if (asset == null) {
+            asset = new Stock(symbol, quantity, price, date, companyName);
+            assets.add(asset);
+        } else {
+            asset.setQuantity(asset.getQuantity() + quantity);
+            asset.setPurchasePrice(price);
+            asset.setPurchaseDate(date);
+        }
+        transactions.add(new AssetTransaction("No." + transactions.size(), date, quantity * price,
+                "Add Stock:" + symbol, TransactionType.ADD, quantity));
+
+    }
+
+    public void addToken(String symbol, String tokenName,
+                         double quantity, double price, Date date) {
+        Asset asset = findAsset(symbol);
+        if (asset == null) {
+            asset = new Token(symbol, quantity, price, date,tokenName);
+            assets.add(asset);
+        } else {
+            asset.setQuantity(asset.getQuantity() + quantity);
+            asset.setPurchasePrice(price);
+            asset.setPurchaseDate(date);
+        }
+        transactions.add(new AssetTransaction("No." + transactions.size(), date, quantity * price,
+                "Add Token:" + symbol, TransactionType.ADD, quantity));
+    }
+
 
 }
