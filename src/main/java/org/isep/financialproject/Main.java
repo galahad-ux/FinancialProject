@@ -14,7 +14,7 @@ public class Main extends Application{
         User.allUsers = User.loadAllUsers("users.csv");
 
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Login-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load());
         scene.getStylesheets().add(getClass().getResource("buttonDesign.css").toExternalForm());
         stage.setTitle("Login");
         stage.setScene(scene);
