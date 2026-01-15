@@ -109,4 +109,16 @@ public class Investment {
     }
 
 
+    public double getTotalAmount() {
+        double total = 0;
+        for (int i = 0; i < assets.size(); i++) {
+            Asset a = assets.get(i);
+            total += a.getQuantity() * a.getPurchasePrice();
+        }
+        return total;
+    }
+
+
+
+
 }

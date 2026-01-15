@@ -96,6 +96,7 @@ public class AddAssestController {
         }
 
         UserAssetStorage.save(LoggedInUser.currentUserEmail, investment);
+        InvestmentViewController.refreshView();
         Message.setText(("Add success:" + s + " qty:" + quantity + " price:" + price+"Date:"+date));
         clearInputs();
     }
