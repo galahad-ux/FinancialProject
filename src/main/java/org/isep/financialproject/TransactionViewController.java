@@ -20,11 +20,16 @@ public class TransactionViewController {
 
     private Investment sharedInvestment;
 
+    @FXML
     public void openAHT() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddTransaction.fxml"));
         Parent root = fxmlLoader.load();
 
         AddTransactionController controller = fxmlLoader.getController();
+        if (sharedInvestment == null) {
+            System.out.println("Error: sharedInvestment is null");
+            return;
+        }
         controller.setInvestment(sharedInvestment);
 
         Stage stage = new Stage();
@@ -41,10 +46,11 @@ public class TransactionViewController {
     private void initialize() {
         sharedInvestment = LoggedInUser.investment;
         txListView.setItems(txItems);
-        refreshTransactions();
+        if (sharedInvestment != null) refreshTransactions();
     }
 
     private void refreshTransactions() {
+        if (sharedInvestment == null) return;
         txItems.setAll(sharedInvestment.getTransactions());
     }
 

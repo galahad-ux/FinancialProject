@@ -6,5 +6,7 @@ public enum TransactionType {
     TRANSFER,
     BUY,
     SELL,
+    ADD,
+
 
 }

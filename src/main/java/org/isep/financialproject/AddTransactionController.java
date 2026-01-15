@@ -12,10 +12,12 @@ public class AddTransactionController {
     private Button AssetButton;
 
     private Investment investment;
+
     public void setInvestment(Investment investment) {
         this.investment = investment;
     }
 
+    @FXML
     public void openAssetT() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddAssetTransaction.fxml"));
         Parent root = fxmlLoader.load();

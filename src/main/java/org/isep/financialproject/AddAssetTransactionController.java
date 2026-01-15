@@ -1,7 +1,6 @@
 package org.isep.financialproject;
 import java.util.Date;
 import javafx.fxml.FXML;
-import javafx.scene.*;
 import javafx.scene.control.*;
 
 public class AddAssetTransactionController {
@@ -99,7 +98,7 @@ public class AddAssetTransactionController {
 
         Message.setText(("BUY success:" + s + " qty:" + quantity + " price:" + price+"Date:"+date));
 
-        InvestmentStorage.save(LoggedInUser.currentUserEmail, investment);
+        UserAssetStorage.save(LoggedInUser.currentUserEmail, investment);
         clearInputs();
         return;
 
@@ -162,7 +161,7 @@ public class AddAssetTransactionController {
 
         Message.setText(("Sell success:" + s + " qty:" + quantity + " price:" + price+"Date:"+date));
 
-        InvestmentStorage.save(LoggedInUser.currentUserEmail, investment);
+        UserAssetStorage.save(LoggedInUser.currentUserEmail, investment);
         clearInputs();
         return;
 

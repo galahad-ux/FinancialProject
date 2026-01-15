@@ -3,7 +3,7 @@ package org.isep.financialproject;
 import java.io.*;
 import java.util.Date;
 
-public class InvestmentStorage {
+public class UserAssetStorage {
     private static String fileName(String email) {
 
         String safe = email.replace("@", "_").replace(".", "_");

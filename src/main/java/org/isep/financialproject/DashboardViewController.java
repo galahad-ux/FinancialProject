@@ -13,9 +13,14 @@ public class DashboardViewController {
     private Button APButton;
 
 
+
     public void openAPV() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddPortfolio.fxml"));
         Parent root = fxmlLoader.load();
+
+        AddPortofolioController controller = fxmlLoader.getController();
+        controller.setInvestment(LoggedInUser.investment);
+
         Stage stage = new Stage();
         stage.setTitle("Add Portfolio");
         stage.setScene(new Scene(root));

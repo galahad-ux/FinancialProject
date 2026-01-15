@@ -15,6 +15,11 @@ public class AddPortofolioController {
     @FXML
     private Button AssestButton;
 
+    private Investment investment;
+
+    public void setInvestment(Investment investment) {
+        this.investment = investment;
+    }
     @FXML
     public void openBankChoice() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/isep/financialproject/ChooseBankAccount.fxml"));

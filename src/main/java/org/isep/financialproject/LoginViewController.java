@@ -91,7 +91,7 @@ public class LoginViewController {
             LoggedInUser.currentUserEmail = userEmail;
             LoggedInUser.currentUser = User.checkEmail(userEmail);
 
-            LoggedInUser.investment = InvestmentStorage.load(userEmail);
+            LoggedInUser.investment = UserAssetStorage.load(userEmail);
 
             try{
                 openPortfolioWindow(userEmail);
