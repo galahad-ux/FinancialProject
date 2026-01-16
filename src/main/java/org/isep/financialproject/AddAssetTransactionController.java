@@ -116,17 +116,6 @@ public class AddAssetTransactionController {
             return;
         }
 
-        double quantity;
-        try {
-            quantity = Double.parseDouble(QuantityField.getText().trim());
-        } catch (NumberFormatException ex) {
-            Message.setText("Error:Quantity must be a number!");
-            return;
-        }
-        if (quantity <= 0) {
-            Message.setText("Error:Quantity must be > 0!");
-            return;
-        }
 
         String s = SymbolField.getText().trim();
         String n = NameField.getText().trim();
@@ -147,6 +136,19 @@ public class AddAssetTransactionController {
             Message.setText("Error:Please choose Asset type");
             return;
         }
+
+        double quantity;
+        try {
+            quantity = Double.parseDouble(QuantityField.getText().trim());
+        } catch (NumberFormatException ex) {
+            Message.setText("Error:Quantity must be a number!");
+            return;
+        }
+        if (quantity <= 0) {
+            Message.setText("Error:Quantity must be > 0!");
+            return;
+        }
+
 
         double price;
         try {

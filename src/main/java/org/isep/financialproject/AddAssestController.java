@@ -54,6 +54,21 @@ public class AddAssestController {
         String s = SymbolField.getText().trim();
         String n = nameField.getText().trim();
         String t = AssestType.getText().trim();
+        if (s.isEmpty()){
+            Message.setText("Error:Symbol cannot be empty!");
+            return;
+        }
+
+        if (n.isEmpty()){
+            Message.setText("Error:Name cannot be empty!");
+            return;
+        }
+
+        if (!t.equals("Stock") && !t.equals("Token")) {
+            Message.setText("Error:Please choose Asset type");
+            return;
+        }
+
         double quantity;
         try {
             quantity = Double.parseDouble(QuantityField.getText().trim());
@@ -71,20 +86,6 @@ public class AddAssestController {
             price = AlphaVantageClient.getStockPrice(s);
         } catch (Exception e) {
             Message.setText("Error:Failed to fetch The price for " + s + "\n" + e.getMessage());
-            return;
-        }
-        if (s.isEmpty()){
-            Message.setText("Error:Symbol cannot be empty!");
-            return;
-        }
-
-        if (n.isEmpty()){
-            Message.setText("Error:Name cannot be empty!");
-            return;
-        }
-
-        if (!t.equals("Stock") && !t.equals("Token")) {
-            Message.setText("Error:Please choose Asset type");
             return;
         }
 
