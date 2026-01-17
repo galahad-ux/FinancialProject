@@ -3,15 +3,19 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="131.0" prefWidth="250.0" style="-fx-background-color: lavender;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.isep.financialproject.AddPortofolioController">
+<AnchorPane prefHeight="151.0" prefWidth="307.0" style="-fx-background-color: lavender;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.isep.financialproject.AddPortofolioController">
    <children>
-      <Label layoutX="23.0" layoutY="26.0" text="PLease choose your Portfolio type" />
+      <Label layoutX="57.0" layoutY="26.0" text="PLease choose your Portfolio type">
+         <font>
+            <Font name="Georgia" size="14.0" />
+         </font></Label>
 
-      <Button fx:id="BankButton" layoutX="33.0" layoutY="86.0" mnemonicParsing="false" onAction="#openBPV" prefHeight="23.0" prefWidth="76.0" stylesheets="@buttonDesign.css" text="Bank account" />
+      <Button fx:id="BankButton" layoutX="33.0" layoutY="86.0" mnemonicParsing="false" onAction="#openBPV" prefHeight="30.0" prefWidth="107.0" stylesheets="@buttonDesign.css" text="Bank account" />
 
-      <Button fx:id="AssestButton" layoutX="143.0" layoutY="86.0" mnemonicParsing="false" onAction="#openAAV" prefHeight="23.0" prefWidth="76.0" stylesheets="@buttonDesign.css" text="Assest" />
+      <Button fx:id="AssestButton" layoutX="172.0" layoutY="86.0" mnemonicParsing="false" onAction="#openAAV" prefHeight="23.0" prefWidth="76.0" stylesheets="@buttonDesign.css" text="Assest" />
        
-      <Label layoutX="95.0" layoutY="58.0" prefHeight="15.0" prefWidth="58.0" text="(=^ェ^=)" />
+      <Label layoutX="114.0" layoutY="56.0" prefHeight="15.0" prefWidth="58.0" text="(=^ェ^=)" />
    </children>
 </AnchorPane>

@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="430.0" prefWidth="580.0" style="-fx-background-color: #cfcfe1;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.isep.financialproject.DashboardViewController">
+<AnchorPane prefHeight="430.0" prefWidth="580.0" style="-fx-background-color: #cfcfe1;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.isep.financialproject.DashboardViewController">
    <children>
       <SplitPane dividerPositions="0.1384297520661157, 0.5206611570247934, 0.5" layoutX="33.0" layoutY="37.0" orientation="VERTICAL" prefHeight="322.0" prefWidth="482.0">
         <items>
@@ -31,24 +35,14 @@
                </children>
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="10.0" minHeight="0.0" minWidth="0.0" prefHeight="62.0" prefWidth="158.0" style="-fx-background-color: #cfcfe1;" />
-            <TableView prefHeight="129.0" prefWidth="481.0" style="-fx-background-color: #cfcfe1;">
+            <TableView fx:id="BankAccountTable" prefHeight="129.0" prefWidth="481.0" style="-fx-background-color: #cfcfe1;">
                <columns>
-                  <TableColumn prefWidth="328.79999237060474" text="Accounts" />
-                  <TableColumn prefWidth="151.999951171875" text="Amount" />
+                  <TableColumn fx:id="Accounts" prefWidth="328.79999237060474" text="Accounts" />
+                  <TableColumn fx:id="Amount" prefWidth="151.999951171875" text="Amount" />
                </columns>
             </TableView>
         </items>
       </SplitPane>
-      <Button fx:id="goToInvestment" layoutX="515.0" layoutY="84.0" mnemonicParsing="false" prefHeight="6.0" prefWidth="28.0" stylesheets="@buttonDesign.css" text="&gt;">
-         <font>
-            <Font name="System Bold" size="10.0" />
-         </font>
-      </Button>
-      <Button layoutX="515.0" layoutY="220.0" mnemonicParsing="false" prefHeight="6.0" prefWidth="28.0" stylesheets="@buttonDesign.css" text="&gt;">
-         <font>
-            <Font name="System Bold" size="10.0" />
-         </font>
-      </Button>
       <Button fx:id="APButton" layoutX="231.0" layoutY="391.0" mnemonicParsing="false" onAction="#openAPV" stylesheets="@buttonDesign.css" text="+ Add Portfolio">
          <font>
             <Font name="Georgia" size="12.0" />

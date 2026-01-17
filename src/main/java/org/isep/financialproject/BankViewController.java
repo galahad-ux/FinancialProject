@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.chart.PieChart;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
@@ -20,6 +21,9 @@ public class BankViewController {
     private PieChart bankPieChart;
 
     @FXML
+    private Label total;
+
+    @FXML
     public void initialize() {
         typeCol.setCellValueFactory(cd ->
                 new javafx.beans.property.SimpleStringProperty(cd.getValue().getClass().getSimpleName()));
@@ -32,15 +36,23 @@ public class BankViewController {
     public void refresh(){
         bankTable.getItems().clear();
 
+        double totalB = 0;
+
         ObservableList<PieChart.Data> pieData = FXCollections.observableArrayList();
         for (Portfolio p: LoggedInUser.currentUser.getPortfolios()){
             if (p instanceof BankAccount account){
                 bankTable.getItems().add(account);
+                totalB += account.getBalance();
 
                 String pieName = account.getClass().getSimpleName() + " - " + account.getAccNum();
                 pieData.add(new PieChart.Data(pieName, account.getBalance()));
             }
         }
+
+        if (total != null){
+            total.setText(String.valueOf(totalB));
+        }
+
         bankPieChart.setData(pieData);
         bankPieChart.setTitle("Accounts Balance");
     }

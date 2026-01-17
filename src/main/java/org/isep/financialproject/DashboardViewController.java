@@ -18,6 +18,7 @@ import java.io.IOException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class DashboardViewController{
     @FXML
@@ -33,28 +34,57 @@ public class DashboardViewController{
     private TableView<InvRow> investmentTable;
 
     @FXML
+    private TableView<AccountsRow> BankAccountTable;
+
+    @FXML
     private TableColumn<InvRow, String> Investment;
 
     @FXML
     private TableColumn<InvRow, Double> InvestmentAmount;
 
+    @FXML
+    private TableColumn<AccountsRow,String> Accounts;
+
+    @FXML
+    private TableColumn<AccountsRow,String> Amount;
+
 
     private final ObservableList<InvRow> invRows = FXCollections.observableArrayList();
+    private final ObservableList<AccountsRow> bankRows = FXCollections.observableArrayList();
 
     @FXML
     public void initialize() {
 
         Investment.setCellValueFactory(new PropertyValueFactory<>("name"));
         InvestmentAmount.setCellValueFactory(new PropertyValueFactory<>("amount"));
+        Accounts.setCellValueFactory(new PropertyValueFactory<>("accountName"));
+        Amount.setCellValueFactory(new PropertyValueFactory<>("amount"));
 
         investmentTable.setItems(invRows);
+        BankAccountTable.setItems(bankRows);
 
         refreshDashboard();
     }
 
     private void refreshDashboard() {
         invRows.clear();
+        bankRows.clear();
 
+        double bankTotal = 0;
+        double investTotal = 0;
+
+        //bankAccounts
+        for (Portfolio p: LoggedInUser.currentUser.getPortfolios()){
+            if (p instanceof BankAccount account){
+                double b = account.getBalance();
+                bankTotal += b;
+
+                String name = account.getClass().getSimpleName();
+                bankRows.add(new AccountsRow(name,b));
+            }
+        }
+
+        //investments
         if (LoggedInUser.investment == null) {
             totalAssetLabel.setText("0");
             return;
@@ -83,8 +113,12 @@ public class DashboardViewController{
         for (InvRow Ir : temp) {
             if (Ir.amount > 0) {
                 invRows.add(Ir);
+                investTotal += Ir.amount;
             }
         }
+
+        double total = bankTotal + investTotal;
+        totalAssetLabel.setText(String.format("%.2f",total));
     }
 
     private String extractSymbol(String desc) {
@@ -99,9 +133,6 @@ public class DashboardViewController{
         return null;
     }
 
-
-
-
     public static class InvRow {
         private String name;
         private Double amount;
@@ -113,6 +144,24 @@ public class DashboardViewController{
 
         public String getName() { return name; }
         public Double getAmount() { return amount; }
+    }
+
+    public static class AccountsRow{
+        private String accountName;
+        private Double amount;
+
+        public AccountsRow(String accountName, Double amount){
+            this.accountName = accountName;
+            this.amount = amount;
+        }
+
+        public Double getAmount() {
+            return amount;
+        }
+
+        public String getAccountName() {
+            return accountName;
+        }
     }
 
 

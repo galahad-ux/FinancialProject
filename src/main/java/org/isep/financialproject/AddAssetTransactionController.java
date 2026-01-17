@@ -97,6 +97,7 @@ public class AddAssetTransactionController {
         }
 
         Message.setText(("BUY success:" + s + " qty:" + quantity + " price:" + price+"Date:"+date));
+        StoreNotifications.add("Investment bought");
 
         InvestmentViewController.refreshView();
         UserAssetStorage.save(LoggedInUser.currentUserEmail, investment);
@@ -161,7 +162,7 @@ public class AddAssetTransactionController {
 
         investment.sell(s,quantity,price,date);
 
-
+        StoreNotifications.add("Investment sold");
         Message.setText(("Sell success:" + s + " qty:" + quantity + " price:" + price+"Date:"+date));
 
         InvestmentViewController.refreshView();

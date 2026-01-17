@@ -1,14 +1,12 @@
 package org.isep.financialproject;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class CreateCheckingController {
+public class CreateBankAccountController {
     @FXML private ChoiceBox<String> typeField;
     @FXML private TextField initialAmountField;
 
@@ -42,6 +40,7 @@ public class CreateCheckingController {
 
         LoggedInUser.currentUser.addPortfolio(account);
         bankAccountCSV.saveAccount(LoggedInUser.currentUserEmail, account);
+        StoreNotifications.add("Bank Account added");
         ((Stage) initialAmountField.getScene().getWindow()).close();
     }
 }

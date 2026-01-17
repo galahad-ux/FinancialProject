@@ -21,17 +21,6 @@ public class AddPortofolioController {
     }
 
     @FXML
-    public void openBankChoice() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/isep/financialproject/ChooseBankAccount.fxml"));
-        Parent root = loader.load();
-
-        Stage stage = new Stage();
-        stage.setTitle("Choose Bank Account");
-        stage.setScene(new Scene(root));
-        stage.show();
-    }
-
-    @FXML
     public void openAAV() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddAsset-view.fxml"));
         Parent root = fxmlLoader.load();
@@ -48,7 +37,7 @@ public class AddPortofolioController {
     @FXML
     private void openBPV() {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("CreateChecking.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("CreateBankAccount.fxml"));
             Parent root = fxmlLoader.load();
 
             Stage stage = new Stage();

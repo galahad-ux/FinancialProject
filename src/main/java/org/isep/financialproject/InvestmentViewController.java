@@ -89,7 +89,7 @@ public class InvestmentViewController {
 
             }
         }
-        TotalAmount.setText("" + total);
+        TotalAmount.setText(String.format("%.2f",total));
     }
 
 
