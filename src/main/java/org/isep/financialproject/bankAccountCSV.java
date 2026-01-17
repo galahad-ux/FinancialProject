@@ -91,4 +91,44 @@ public class bankAccountCSV {
 
         return result;
     }
+
+    //for bank transactions balance update
+    public static void updateBalance(String userEmail, String accNo, double newBalance) {
+        List<String> lines = new ArrayList<>();
+
+        File f = new File(FILE);
+        if (!f.exists()) return;
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(FILE))) {
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                if (line.trim().isEmpty()) continue;
+
+                String[] data = line.split(",");
+//                if (data.length < 8) {
+//                    lines.add(line);
+//                    continue;
+//                }
+
+                if (data[0].equalsIgnoreCase(userEmail) && data[2].equals(accNo)) {
+                    data[3] = String.valueOf(newBalance);
+                    line = String.join(",", data);
+                }
+                lines.add(line);
+
+            }
+        } catch (IOException e){
+            throw new RuntimeException();
+        }
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE))) {
+            for (String line : lines) {
+                writer.write(line);
+                writer.newLine();
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

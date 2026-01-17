@@ -7,10 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #cfcfe1;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.isep.financialproject.AnalyticsController">
    <children>
-      <Label layoutX="266.0" layoutY="14.0" text="Analytics">
+      <Label layoutX="224.0" layoutY="14.0" text="Investment Analytics">
          <font>
             <Font name="Georgia Bold" size="14.0" />
          </font>

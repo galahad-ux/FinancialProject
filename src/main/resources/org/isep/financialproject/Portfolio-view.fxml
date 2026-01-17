@@ -23,10 +23,10 @@
                      <font>
                         <Font name="Georgia" size="12.800000190734863" />
                      </font></Button>
-                  <Button mnemonicParsing="false" onAction="#showTransfer" prefHeight="27.0" prefWidth="126.0" styleClass="contentButton" stylesheets="@buttonDesign.css" text="Transfer" textFill="WHITE">
-                     <font>
-                        <Font name="Georgia" size="12.800000190734863" />
-                     </font></Button>
+                   <Button mnemonicParsing="false" onAction="#showTransfer" prefHeight="27.0" prefWidth="126.0" styleClass="contentButton" stylesheets="@buttonDesign.css" text="Transfer" textFill="WHITE">
+                       <font>
+                           <Font name="Georgia" size="12.800000190734863" />
+                       </font></Button>
                   <Button mnemonicParsing="false" onAction="#showTransactions" prefHeight="27.0" prefWidth="130.0" styleClass="contentButton" stylesheets="@buttonDesign.css" text="Transactions" textFill="WHITE">
                      <font>
                         <Font name="Georgia" size="12.800000190734863" />
