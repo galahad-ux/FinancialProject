@@ -99,9 +99,11 @@ public class TransferViewController {
 
         try{
             String description = "Transfer";
-            acc.spend(amount,description,receiverAcc,LoggedInUser.currentUser);
+            acc.transfer(amount,description,receiverAcc,LoggedInUser.currentUser);
 
             bankAccountCSV.updateBalance(LoggedInUser.currentUserEmail,acc.getAccNum(),acc.getBalance());
+            BankTransaction bankTransaction = acc.getTransactions().get(acc.getTransactions().size() - 1);
+            BankTransactionStorage.saveTransaction(LoggedInUser.currentUserEmail, acc.getAccNum(),bankTransaction);
             StoreNotifications.add("Transfer sent to " + beneficiary);
             msg.setText("Transfer successful");
             clearFields();

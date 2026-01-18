@@ -97,6 +97,7 @@ public class LoginViewController {
             }
 
             LoggedInUser.investment = UserAssetStorage.load(userEmail);
+            BankTransactionStorage.loadTransactionsForUser(userEmail,accounts);
 
             try{
                 openPortfolioWindow(userEmail);

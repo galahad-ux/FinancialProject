@@ -32,6 +32,7 @@ public class AddTransactionController {
         stage.setTitle("Add Asset Transaction");
         stage.setScene(new Scene(root));
         stage.show();
+        ((Stage) AssetButton.getScene().getWindow()).close();
     }
 
     @FXML
@@ -45,5 +46,6 @@ public class AddTransactionController {
         stage.setTitle("Add Bank Transaction");
         stage.setScene(new Scene(root));
         stage.show();
+        ((Stage) BankButton.getScene().getWindow()).close();
     }
 }

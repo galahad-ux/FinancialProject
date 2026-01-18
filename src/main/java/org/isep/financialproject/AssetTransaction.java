@@ -26,9 +26,9 @@ public class AssetTransaction extends Transaction{
     //}
 
     public String toString() {
-        return "AssetTransaction | description = " + getDescription() +
-                " | quantity = " + quantity + " | amount = " + getAmount() +
-                " | date = " + getDate();
+        String date = new java.text.SimpleDateFormat("yyyy-MM-dd HH-mm").format(getDate());
+        return date + "| AssetTransaction | description = " + getDescription() +
+                " | quantity = " + quantity + " | amount = " + getAmount();
     }
 
 

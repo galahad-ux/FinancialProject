@@ -80,14 +80,12 @@ public class BankTransactionController {
             msg.setText("Amount must be greater than 0");
         }
 
-        if (amt > account.getBalance()){
-            msg.setText("Insufficient money");
-        }
-
         try{
             account.deposit(amt,"Deposit", "Self", LoggedInUser.currentUser);
 
             bankAccountCSV.updateBalance(LoggedInUser.currentUserEmail,account.getAccNum(),account.getBalance());
+            BankTransaction bankTransaction = account.getTransactions().get(account.getTransactions().size() - 1);
+            BankTransactionStorage.saveTransaction(LoggedInUser.currentUserEmail, account.getAccNum(),bankTransaction);
             StoreNotifications.add(String.format("%.2f", amt)+ " deposited to " + account.getName());
             msg.setText("Deposit successful");
             AmountField.clear();
@@ -132,6 +130,8 @@ public class BankTransactionController {
             account.withdraw(amt,"Withdraw", "ATM", LoggedInUser.currentUser);
 
             bankAccountCSV.updateBalance(LoggedInUser.currentUserEmail,account.getAccNum(),account.getBalance());
+            BankTransaction bankTransaction = account.getTransactions().get(account.getTransactions().size() - 1);
+            BankTransactionStorage.saveTransaction(LoggedInUser.currentUserEmail, account.getAccNum(),bankTransaction);
             StoreNotifications.add(String.format("%.2f", amt)+ " withdrew from " + account.getName());
             msg.setText("Withdraw successful");
             AmountField.clear();

@@ -73,6 +73,11 @@ public abstract class BankAccount extends Portfolio {
         transactions.add(new BankTransaction(generateTransactionId(user), new Date(), value, description, TransactionType.WITHDRAW, recipient));
     }
 
+    public void transfer(double value, String description, String recipient, User user) {
+        withdraw(value);
+        transactions.add(new BankTransaction(generateTransactionId(user), new Date(), value, description, TransactionType.TRANSFER, recipient));
+    }
+
     public void cancelWithdrawal(User user) {
         for (int i = transactions.size() - 1; i >= 0; i--) {
             BankTransaction t = transactions.get(i);
@@ -84,5 +89,9 @@ public abstract class BankAccount extends Portfolio {
             }
         }
         throw new IllegalStateException("There is no withdrawal transaction to cancel");
+    }
+
+    public void addLoadedTransaction(BankTransaction bt){
+        transactions.add(bt);
     }
 }
