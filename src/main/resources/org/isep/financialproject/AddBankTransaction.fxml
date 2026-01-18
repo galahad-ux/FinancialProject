@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="269.0" prefWidth="418.0" style="-fx-background-color: lavender;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
+<AnchorPane prefHeight="269.0" prefWidth="418.0" style="-fx-background-color: lavender;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.isep.financialproject.BankTransactionController">
    <children>
       <Label layoutX="62.0" layoutY="34.0" text="Make a bank transaction ꒰ᐢ.   ̫ .ᐢ꒱">
          <font>
             <Font name="Georgia Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="88.0" layoutY="141.0" text="To :">
+      <Label layoutX="88.0" layoutY="141.0" text="Bank: ">
          <font>
             <Font name="Georgia" size="13.0" />
          </font>
@@ -25,25 +24,22 @@
             <Font name="Georgia" size="13.0" />
          </font>
       </Label>
-      <TextField fx:id="AmountField" layoutX="202.0" layoutY="85.0" prefHeight="26.0" prefWidth="159.0" />
-      <Button fx:id="DepositButton" layoutX="106.0" layoutY="208.0" mnemonicParsing="false" onAction="#Deposit" stylesheets="@buttonDesign.css" text="Deposit">
+      <TextField fx:id="AmountField" layoutX="189.0" layoutY="85.0" prefHeight="27.0" prefWidth="172.0" />
+      <Button fx:id="DepositButton" layoutX="107.0" layoutY="195.0" mnemonicParsing="false" onAction="#deposit" stylesheets="@buttonDesign.css" text="Deposit">
          <font>
             <Font name="Georgia" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="WithdrawButton" layoutX="230.0" layoutY="208.0" mnemonicParsing="false" onAction="#Withdraw" stylesheets="@buttonDesign.css" text="Withdraw">
+      <Button fx:id="WithdrawButton" layoutX="236.0" layoutY="195.0" mnemonicParsing="false" onAction="#withdraw" stylesheets="@buttonDesign.css" text="Withdraw">
          <font>
             <Font name="Georgia" size="13.0" />
          </font>
       </Button>
-      <MenuButton fx:id="SelectMenu" layoutX="202.0" layoutY="136.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="159.0" text="Select a bank account">
-        <items>
-            <MenuItem mnemonicParsing="false" onAction="#chooseSavingsAccount" text="Savings account" />
-            <MenuItem mnemonicParsing="false" onAction="#chooseCheckingAccount" text="Checking account" />
-        </items>
+      <ComboBox fx:id="selectAccount" layoutX="189.0" layoutY="135.0" prefHeight="27.0" prefWidth="172.0" promptText="Select Bank Account" />
+      <Label fx:id="msg" layoutX="23.0" layoutY="236.0" text="-">
          <font>
-            <Font name="Georgia" size="13.0" />
+            <Font name="Georgia" size="12.800000190734863" />
          </font>
-      </MenuButton>
+      </Label>
    </children>
 </AnchorPane>

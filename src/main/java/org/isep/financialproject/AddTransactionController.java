@@ -11,6 +11,9 @@ public class AddTransactionController {
     @FXML
     private Button AssetButton;
 
+    @FXML
+    private Button BankButton;
+
     private Investment investment;
 
     public void setInvestment(Investment investment) {
@@ -29,11 +32,18 @@ public class AddTransactionController {
         stage.setTitle("Add Asset Transaction");
         stage.setScene(new Scene(root));
         stage.show();
-
-
-
-
     }
 
+    @FXML
+    public void openBankT() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddBankTransaction.fxml"));
+        Parent root = fxmlLoader.load();
 
+        BankTransactionController controller = fxmlLoader.getController();
+
+        Stage stage = new Stage();
+        stage.setTitle("Add Bank Transaction");
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
 }
